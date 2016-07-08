@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<!-- Configuration for less -->
+		<link rel="stylesheet/less" href="css/main.less" type="text/css" />
+		<script src="js/less.js"></script>
+		<!-- Configuration for jquery-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="js/javascript.js"></script>
+		<title>Login Page</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+				 <div class="headerLeft">
+				 	<img src="images/logo1.jpg" class="logo">
+				 </div>
+				 <div class="headerRight">
+				 	<p class="">Login Page</p>
+				 </div>
+				 <div class="clear"></div>
+			</div>
+			<div class="content">
+				<div id="logInDiv" class="center">
+					<p class="title1">Log IN</p>
+					<form action="" method="">
+						<p><label for="username">Username: </label><input type="text" name="username" id="username"></p>
+						<p><label for="pass">Password: </label><input type="password" name="pass" id="pass"></p>
+						<label></label><input type="submit" value="Log IN">
+					</form>
+					<br/>
+					<p> If you are not registered, click <span id="showRegisterDiv" class="link">here</span></p>
+				</div>
+				<div id="registerDiv" class="register center">
+					<p class="title1">Register</p>
+					<form action="" method="">
+						<p><label for="rU">Username:</label><input type="text" name="rUsername" id="rU"></p>
+						<p><label for="rF">First Name:</label><input type="text" name="rFname" id="rF"></p>
+						<p><label for="rL">Last Name:</label><input type="text" name="rLname" id="rL"></p>
+						<p><label for="rE">E-mail:</label><input type="text" name="email" id="rE"></p>
+						<p><label for="rA">Adress:</label><input type="text" name="rUsername"  id="rA"></p>
+						<p><label for="rO">Ocupation:</label><input type="text" name="rUsername"  id="rO"></p>
+						<label></label><input type="submit" value="REGISTER">
+					</form>
+					<br />
+					<p> To go back click <span id="showLogInDiv" class="link">here</span></p>
+				</div>
+			<br />
+			</div>
+
+			<div class="footer">
+				<div>
+					<p>Copyright &copy; iQuest. All rights reserved.</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

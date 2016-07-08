@@ -1,0 +1,172 @@
+
+@mainColor: #097777;
+@secondaryColor: #41F0F0;
+@title1: 2rem;
+@pSize1: 1.4rem; 
+@pSize2: 1rem;
+
+
+/*FOR DESKTOP*/
+@media only screen and (min-device-width:1024px) {
+	.headerLeft{
+	width: 30%;
+	height: 100%;
+	float: left;
+	text-align: center;
+	}
+	.headerRight{
+	width: 70%;
+	height: 100%;
+	float: left;
+	text-align: right;
+	padding-right: 5vh;
+	}
+	.container{
+	width: 50%;
+	margin: 0 auto;
+	margin-top: 5vh;
+	}
+	.logo{
+	max-width: 60%;
+	height: auto;
+	}
+}
+/*FOR TABLETS*/
+@media only screen and (min-device-width:768px) and (max-device-width:1024px) {
+	.headerLeft{
+	width: 30%;
+	height: 100%;
+	text-align: center;
+	float: left;
+	}
+	.headerRight{
+	width: 70%;
+	height: 100%;
+	float: left;
+	text-align: right;
+	padding-right: 5vh;
+	}
+	.container{
+	width: 80%;
+	margin: 0 auto;
+	}
+	.logo{
+	max-width: 60%;
+	height: auto;
+	}
+}
+
+/*FOR MOBILE*/
+@media only screen and (max-width:768px) {
+	.headerLeft{
+	width: 100%;
+	float: left;
+	text-align: center;
+	border: 1px solid red;
+	}
+	.headerRight{
+	width: 100%;
+	float: left;
+	text-align: right;
+	padding-right: 5vh;
+		border: 1px solid red;
+
+	}
+	.container{
+	width: 100%;
+	}
+	.logo{
+	max-width: 30%;
+	height: auto;
+	}
+}
+
+*{
+	box-sizing: border-box;
+}
+body{
+	background:url("../images/wallpaper.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}	
+
+p{
+	font-size: @pSize1;
+	}
+
+.title1{
+	font-size: @title1;
+	color: @mainColor;
+}
+.header{
+	width: 100%;
+	height: 20%;
+	border: 1px solid black;
+	background-color: #ffffff;
+
+}
+.content{
+	width: 100%;
+	height: 65%;
+	padding: 3vw;
+	margin-top: 3%;
+	border: 1px solid black;
+	background-color: #ffffff;
+}
+.footer{
+	div{
+		text-align: center;
+		border: 1px solid black;
+		height: 5%;
+	}
+	p{
+		font-size: @pSize2;
+	}
+	height: 10%;
+	margin-top: 5%;
+	background-color: #ffffff;
+}
+.opacity{
+	opacity: 0.7;
+}
+.clear{
+	clear: both;
+}
+
+.standard{
+	width: 15vw;
+	border: 2px solid @mainColor;
+	border-radius: 4px;
+	font-size: @pSize1;
+}
+input[type=text], input[type="password"]{
+	.standard;
+}
+input[type=text]:focus, input[type="password"]:focus {
+	background-color: @secondaryColor;
+}
+input[type=button], input[type=submit], input[type=reset] {
+	.standard;
+	background-color:@mainColor;
+	&:hover{
+		text-decoration: underline;
+	}
+	}
+label{
+	display: inline-block;;
+	width: 10vw;
+}
+.link{
+	color: @mainColor;
+	&:hover{
+		text-decoration: underline;
+	}
+}
+.register{
+	width: 100%;
+	display: none;
+}
+.center{
+	text-align: center;
+}

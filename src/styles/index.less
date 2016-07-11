@@ -264,4 +264,45 @@ label{
   color: @primaryCol;
   display: inline-block;
   margin-bottom: 1%;
+  font-weight: bold;
+}
+.theNews{
+  width: 70%;
+  float: left;
+  
+}
+.newsRightColumn{
+  width: 30%;
+  float: left;
+  border: 1px solid @primaryCol;
+  padding: 1%;
+}
+  
+.newsBigImage{
+  float: left;
+  width: 40%;
+  padding: 1%;
+  img{
+    max-width: 100%;
+    height: auto;
+  }
+}
+.newsTitle{
+  width: 60%;
+  float: left;
+  padding-left: 1%;
+}
+.advertise{
+  width: 33%;
+  float: left;
+  p {
+    font-size: @pSize2;
+  }
+  padding: 1%;
+}
+.row{
+  width: 100%;
+  &:after{
+    .clear;
+  }
 }

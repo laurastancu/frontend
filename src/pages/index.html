@@ -6,7 +6,8 @@
 
   <link rel="stylesheet" href="../css/main.css" type="text/css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="../js/navbarFunction.js"></script>
+  
+  <meta name="viewport" content="initial-scale=1">
   <!-- <link rel="stylesheet" media="screen and(max-width:767px)" href="index_resp_768_rebuild.css"> -->
 </head>
 
@@ -29,19 +30,19 @@
     <div class="content">  
       <div class="sideMenu"><span class="title1">Categories</span>
           <ul class="news"><span class="subtitle">News</span>
-            <li class="newsLi"><a href="">News1</a></li>
-            <li class="newsLi"><a href="">News2</a></li>
-            <li class="newsLi"><a href="">News3</a></li>
-            <li class="newsLi"><a href="">News4</a></li>
-            <li class="newsLi"><a href="">News5</a></li>
+            <li class="newsLi"><a href="#News1">News1</a></li>
+            <li class="newsLi"><a href="#News2">News2</a></li>
+            <li class="newsLi"><a href="#News3">News3</a></li>
+            <li class="newsLi"><a href="#News4">News4</a></li>
+            <li class="newsLi"><a href="#News5">News5</a></li>
           </ul>
           <!-- End of ul class news -->
           <ul class="events"><span class="subtitle">Events</span>
-            <li class="eventsLi"><a href="">Event1</a></li>
-            <li class="eventsLi"><a href="">Event2</a></li>
-            <li class="eventsLi"><a href="">Event3</a></li>
-            <li class="eventsLi"><a href="">Event5</a></li>
-            <li class="eventsLi"><a href="">Event4</a></li>
+            <li class="eventsLi"><a href="#Event1">Event1</a></li>
+            <li class="eventsLi"><a href="#Event2">Event2</a></li>
+            <li class="eventsLi"><a href="#Event3">Event3</a></li>
+            <li class="eventsLi"><a href="#Event4">Event5</a></li>
+            <li class="eventsLi"><a href="#Event5">Event4</a></li>
           </ul>
           <!-- End of ul class events -->
       </div>
@@ -50,17 +51,20 @@
       <div class="articleSection">
         <div class="navbar">
           <ul class="topnav">
-            <li class="navTab"><a href="#home">Home</a></li>
-            <li class="navTab"><a href="#brasov">Brasov</a></li>
-            <li class="navTab"><a href="#craiova">Craiova</a></li>
-            <li class="navTab"><a href="#sibiu">Sibiu</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#brasov">Brasov</a></li>
+            <li><a href="#craiova">Craiova</a></li>
+            <li><a href="#sibiu">Sibiu</a></li>
             <li class="icon">
-            <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+            <a href="#" onclick="myFunction()">&#9776;</a>
+            </li>
+            <li>
+                <form>
+                <input type="text" class="search" placeholder="Search...">
+                </form>
             </li>
           </ul>
-          <form>
-              <input type="text" class="search" placeholder="Search...">
-            </form>
+          
         </div>
         <!-- End of navBar -->
         <div class="newsContainer">
@@ -142,7 +146,7 @@ function myFunction() {
     document.getElementsByClassName("topnav")[0].classList.toggle("responsive");
 }
 </script>
-
+<script src="../js/navbarFunction.js"></script>
 </body>
 
 </html>

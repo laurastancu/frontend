@@ -2,12 +2,11 @@ module.exports = {
   src: {
     path: 'src/',
     components: 'src/components/',
-    //jade: 'src/pages/',
-    html: 'src/pages/',
+    jade: 'src/pages/',
+    //html: 'src/pages/',
     js: 'src/js/',
     less: 'src/styles/',
-    img: 'src/img/',
-    jade:'src/pages'
+    img: 'src/img/'
   },
   dist: {
     path: 'public/',

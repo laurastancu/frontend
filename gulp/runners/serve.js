@@ -17,7 +17,7 @@ function browserSyncInit() {
   });
 }
 
-gulp.task('serve', ['css', 'js:dev', 'html', 'img'], function () {
+gulp.task('serve', ['css', 'js:dev','jade' , 'html', 'img'], function () {
 
   browserSyncInit();
 
@@ -25,6 +25,7 @@ gulp.task('serve', ['css', 'js:dev', 'html', 'img'], function () {
   //gulp.watch([path.components.jade + '**/*.jade', path.src.jade + '**/*.jade'], ['html']);
   gulp.watch([path.src.html + '**/*.html'], ['html']);
   gulp.watch([path.src.less + '*.less'], ['css']);
+  gulp.watch([path.src.jade + '*.jade'], ['jade']);
   gulp.watch([path.src.js + '*.js'], ['js:dev']);
   gulp.watch([path.src.img + '**/*'], ['img']);
 });

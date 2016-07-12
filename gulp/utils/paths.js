@@ -20,8 +20,7 @@ module.exports = {
     path: 'bower_components/'
   },
   npm: {
-    path: 'node_modules/'
-  },
+    path: 'node_modules/'},
   components: {
     jade: 'src/components/*/',
     js: 'src/components/*/js/',

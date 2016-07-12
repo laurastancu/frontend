@@ -6,7 +6,8 @@ module.exports = {
     html: 'src/pages/',
     js: 'src/js/',
     less: 'src/styles/',
-    img: 'src/img/'
+    img: 'src/img/',
+    jade:'src/pages'
   },
   dist: {
     path: 'public/',

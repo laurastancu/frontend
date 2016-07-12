@@ -18,6 +18,9 @@
     margin: 0 auto;
     margin-top: 5vh;
   }
+  ul.topnav li.icon {
+    display: none;
+  }
 }
 /*FOR TABLETS*/
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -37,6 +40,9 @@
   .container {
     width: 85%;
     margin: 0 auto;
+  }
+  ul.topnav li.icon {
+    display: none;
   }
 }
 /*FOR MOBILE*/

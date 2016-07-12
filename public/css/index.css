@@ -106,47 +106,6 @@ p {
   background-color: #fff;
   float: left;
 }
-.navbar {
-  float: left;
-  width: 100%;
-  height: 10%;
-  margin-top: 1%;
-}
-.navbar:after {
-  clear: both;
-}
-ul.topnav {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #097777;
-  max-width: 90%;
-  float: left;
-}
-/* Float the list items side by side */
-ul.topnav li {
-  float: left;
-}
-/* Style the links inside the list items */
-ul.topnav li a {
-  display: inline-block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  -webkit-transition: 0.3s;
-          transition: 0.3s;
-  font-size: 1.2 rem;
-}
-/* Change background color of links on hover */
-ul.topnav li a:hover {
-  background-color: #41F0F0;
-}
-/* Hide the list item that contains the link that should open and close the topnav on small screens */
-ul.topnav li.icon {
-  display: none;
-}
 .newsContainer {
   width: 100%;
   margin-top: 10%;
@@ -249,7 +208,7 @@ label {
   text-align: center;
 }
 .search {
-  margin: 1%;
+  margin: 2%;
 }
 .subtitle {
   font-size: 1.2rem;
@@ -294,5 +253,38 @@ label {
   width: 100%;
 }
 .row:after {
+  clear: both;
+}
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #097777;
+}
+ul.topnav li {
+  float: left;
+}
+ul.topnav li a {
+  display: inline-block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  -webkit-transition: 0.3s;
+          transition: 0.3s;
+  font-size: 17px;
+}
+ul.topnav li a:hover {
+  background-color: #41F0F0;
+}
+.navbar {
+  float: left;
+  min-width: 100%;
+  height: 10%;
+  margin-top: 1%;
+  display: inline;
+}
+.navbar:after {
   clear: both;
 }

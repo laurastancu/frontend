@@ -1,10 +1,10 @@
 doctype
 
 html
-    include head.jade
+    include helpers/head.jade
   body
     .container
-      include header.jade
+      include helpers/header.jade
       .content
         .sideMenu
           span.title1 Categories
@@ -116,7 +116,7 @@ html
         // End of articleSection
         .clear
       // End of Content
-      include footer.jade
+      include helpers/footer.jade
     // End of container
     script.
       function myFunction() {

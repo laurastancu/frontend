@@ -1,0 +1,71 @@
+include helpers/head.jade
+body
+    .container
+      include helpers/header.jade
+      .content
+        .theNews
+          .newsBigImage
+            img(src='../img/newsImage.jpg')
+          // image div
+          .newsTitle
+            p.title1 Lorem ipsum dolor sit amet
+          // title div
+          .clear
+          div
+            p
+              | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquam pulvinar eros eu dignissim. Proin commodo quam a purus aliquet aliquam. Sed at erat leo. Sed nec fermentum odio, vitae sodales quam. Nam cursus arcu in neque aliquam,
+              | sit amet tincidunt metus congue. Vivamus condimentum eros venenatis sem vehicula lobortis. Nam pharetra orci ut vestibulum accumsan. Sed pretium, mauris non vestibulum ornare, metus turpis elementum massa, at sollicitudin neque quam quisnibh.
+              | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquam pulvinar eros eu dignissim. Proin commodo quam a purus aliquet aliquam. Sed at erat leo. Sed nec fermentum odio, vitae sodales quam. Nam cursus arcu in neque aliquam,
+              | sit amet tincidunt metus congue. Vivamus condimentum eros venenatis sem vehicula lobortis. Nam pharetra orci ut vestibulum accumsan. Sed pretium, mauris non vestibulum ornare, metus turpis elementum massa, at sollicitudin neque quam quisnibh.
+              | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquam pulvinar eros eu dignissim. Proin commodo quam a purus aliquet aliquam. Sed at erat leo. Sed nec fermentum odio, vitae sodales quam. Nam cursus arcu in neque aliquam,
+              | sit amet tincidunt metus congue. Vivamus condimentum eros venenatis sem vehicula lobortis. Nam pharetra orci ut vestibulum accumsan. Sed pretium, mauris non vestibulum ornare, metus turpis elementum massa, at sollicitudin neque quam quisnibh.
+              | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquam pulvinar eros eu dignissim. Proin commodo quam a purus aliquet aliquam. Sed at erat leo. Sed nec fermentum odio, vitae sodales quam. Nam cursus arcu in neque aliquam,
+              | sit amet tincidunt metus congue. Vivamus condimentum eros venenatis sem vehicula lobortis. Nam pharetra orci ut vestibulum accumsan. Sed pretium, mauris non vestibulum ornare, metus turpis elementum massa, at sollicitudin neque quam quisnibh.
+            p.title1  News
+            .row
+              .advertise
+                p.subtitle news title
+                p
+                  | Nam pharetra orci ut vestibulum accumsan. Sed pretium, mauris non vestibulum ornare, metus turpis elementum massa, at sollicitudin neque quam quisnibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquam pulvinar eros eu dignissim. Proin commodo quam a purus aliquet aliquam. Sed at erat leo. Sed nec fermentum odio, vitae sodales quam.
+              .advertise
+                p.subtitle news title
+                p
+                  | Nam pharetra orci ut vestibulum accumsan. Sed pretium, mauris non vestibulum ornare, metus turpis elementum massa, at sollicitudin neque quam quisnibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquam pulvinar eros eu dignissim. Proin commodo quam a purus aliquet aliquam. Sed at erat leo. Sed nec fermentum odio, vitae sodales quam.
+              .advertise
+                p.subtitle news title
+                p
+                  | Nam pharetra orci ut vestibulum accumsan. Sed pretium, mauris non vestibulum ornare, metus turpis elementum massa, at sollicitudin neque quam quisnibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquam pulvinar eros eu dignissim. Proin commodo quam a purus aliquet aliquam. Sed at erat leo. Sed nec fermentum odio, vitae sodales quam.
+            p.title1  Events
+            .row
+              .advertise
+                p.subtitle event title
+                p
+                  | Nam pharetra orci ut vestibulum accumsan. Sed pretium, mauris non vestibulum ornare, metus turpis elementum massa, at sollicitudin neque quam quisnibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquam pulvinar eros eu dignissim. Proin commodo quam a purus aliquet aliquam. Sed at erat leo. Sed nec fermentum odio, vitae sodales quam.
+              .advertise
+                p.subtitle event title
+                p
+                  | Nam pharetra orci ut vestibulum accumsan. Sed pretium, mauris non vestibulum ornare, metus turpis elementum massa, at sollicitudin neque quam quisnibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquam pulvinar eros eu dignissim. Proin commodo quam a purus aliquet aliquam. Sed at erat leo. Sed nec fermentum odio, vitae sodales quam.
+              .advertise
+                p.subtitle event title
+                p
+                  | Nam pharetra orci ut vestibulum accumsan. Sed pretium, mauris non vestibulum ornare, metus turpis elementum massa, at sollicitudin neque quam quisnibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquam pulvinar eros eu dignissim. Proin commodo quam a purus aliquet aliquam. Sed at erat leo. Sed nec fermentum odio, vitae sodales quam.
+          // news description + events + news
+        // End of newsDetails
+        .newsRightColumn
+          p.subtitle  More about..
+          p
+            | tincidunt metus congue. Vivamus condimentum eros venenatis sem vehicula lobortis. Nam pharetra orci ut vestibulum accumsan. Sed pretium, mauris non
+          p.subtitle  More about..
+          p
+            | tincidunt metus congue. Vivamus condimentum eros venenatis sem vehicula lobortis. Nam pharetra orci ut vestibulum accumsan. Sed pretium, mauris non
+          p.subtitle  More about..
+          p
+            | tincidunt metus congue. Vivamus condimentum eros venenatis sem vehicula lobortis. Nam pharetra orci ut vestibulum accumsan. Sed pretium, mauris non
+        .clear
+      // End of Content
+     include helpers/footer.jade  
+script.
+      function myFunction() {
+      document.getElementsByClassName("topnav")[0].classList.toggle("responsive");
+      }
+script(src='../js/navbarFunction.js')

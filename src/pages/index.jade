@@ -1,10 +1,7 @@
-doctype
-
-html
-    include head.jade
-  body
+include helpers/head.jade
+body
     .container
-      include header.jade
+      include helpers/header.jade
       .content
         .sideMenu
           span.title1 Categories
@@ -15,7 +12,8 @@ html
             li.newsLi
               a(href='#News2') News2
             li.newsLi
-              a(href='#News3') News3
+        
+             a(href='#News3') News3
             li.newsLi
               a(href='#News4') News4
             li.newsLi
@@ -106,7 +104,7 @@ html
         // End of articleSection
         .clear
       // End of Content
-      include footer.jade
+      include helpers/footer.jade
     // End of container
     script.
       function myFunction() {

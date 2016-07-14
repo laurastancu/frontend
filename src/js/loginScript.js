@@ -2,8 +2,9 @@ $(document).ready(function(){
     $("#showRegisterDiv").click(function(){
         $("#logInDiv").hide();
         $("#registerDiv").show();
+    });
     $("#showLogInDiv").click(function(){
         $("#logInDiv").show();
         $("#registerDiv").hide();
-    });
+    });   
 });

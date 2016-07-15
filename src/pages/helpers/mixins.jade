@@ -1,0 +1,7 @@
+mixin sideMenuList(name,elements,links)
+  ul
+    span.subtitle #{name}
+    each val in elements
+      li
+        a(href="#") #{val}
+        

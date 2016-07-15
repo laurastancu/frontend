@@ -1,3 +1,4 @@
+include helpers/mixins.jade
 include helpers/head.jade
 body
   .container
@@ -23,44 +24,24 @@ body
             | sit amet tincidunt metus congue. Vivamus condimentum eros venenatis sem vehicula lobortis. Nam pharetra orci ut vestibulum accumsan. Sed pretium, mauris non vestibulum ornare, metus turpis elementum massa, at sollicitudin neque quam quisnibh.
         p.title1  News
         .row
-          .advertise
-            p.subtitle news title
-            p
-              | Nam pharetra orci ut vestibulum accumsan. Sed pretium, mauris non vestibulum ornare, metus turpis elementum massa, at sollicitudin neque quam quisnibh. Lorem psum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquam pulvinar eros eu dignissim. Proin commodo quam a purus aliquet aliquam. Sed at erat leo. Sed nec fermentum odio, vitae sodales quam.
-          .advertise
-            p.subtitle news title
-            p
-              | Nam pharetra orci ut vestibulum accumsan. Sed pretium, mauris non vestibulum ornare, metus turpis elementum massa, at sollicitudin neque quam quisnibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquam pulvinar eros eu dignissim. Proin commodo quam a purus aliquet aliquam. Sed at erat leo. Sed nec fermentum odio, vitae sodales quam.
-          .advertise
-            p.subtitle news title
-            p
-              | Nam pharetra orci ut vestibulum accumsan. Sed pretium, mauris non vestibulum ornare, metus turpis elementum massa, at sollicitudin neque quam quisnibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquam pulvinar eros eu dignissim. Proin commodo quam a purus aliquet aliquam. Sed at erat leo. Sed nec fermentum odio, vitae sodales quam.
+          +miniNews()
+          +miniNews()
+          +miniNews()
         p.title1  Events
         .row
-          .advertise
-            p.subtitle event title
-            p
-              | Nam pharetra orci ut vestibulum accumsan. Sed pretium, mauris non vestibulum ornare, metus turpis elementum massa, at sollicitudin neque quam quisnibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquam pulvinar eros eu dignissim. Proin commodo quam a purus aliquet aliquam. Sed at erat leo. Sed nec fermentum odio, vitae sodales quam.
-          .advertise
-            p.subtitle event title
-            p
-              | Nam pharetra orci ut vestibulum accumsan. Sed pretium, mauris non vestibulum ornare, metus turpis elementum massa, at sollicitudin neque quam quisnibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquam pulvinar eros eu dignissim. Proin commodo quam a purus aliquet aliquam. Sed at erat leo. Sed nec fermentum odio, vitae sodales quam.
-          .advertise
-            p.subtitle event title
-            p
-              | Nam pharetra orci ut vestibulum accumsan. Sed pretium, mauris non vestibulum ornare, metus turpis elementum massa, at sollicitudin neque quam quisnibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquam pulvinar eros eu dignissim. Proin commodo quam a purus aliquet aliquam. Sed at erat leo. Sed nec fermentum odio, vitae sodales quam.
+          +miniNews()
+          +miniNews()
+          +miniNews()
           // news description + events + news
         // End of newsDetails
       .newsRightColumn
-        p.subtitle  More about..
-        p
-          | tincidunt metus congue. Vivamus condimentum eros venenatis sem vehicula lobortis. Nam pharetra orci ut vestibulum accumsan. Sed pretium, mauris non
-        p.subtitle  More about..
-        p
-          | tincidunt metus congue. Vivamus condimentum eros venenatis sem vehicula lobortis. Nam pharetra orci ut vestibulum accumsan. Sed pretium, mauris non
-        p.subtitle  More about..
-        p
-          | tincidunt metus congue. Vivamus condimentum eros venenatis sem vehicula lobortis. Nam pharetra orci ut vestibulum accumsan. Sed pretium, mauris non
+        +moreAbout()
+        +moreAbout()
+        +moreAbout()
+        +moreAbout()
+        +moreAbout()
+        +moreAbout()
+        +moreAbout()
       .clear
     include helpers/footer.jade  
     // End of Content

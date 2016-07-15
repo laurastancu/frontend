@@ -7,35 +7,7 @@ html
       include helpers/header.jade
       .content
         .sideMenu
-          span.title1 Categories
-          ul.news
-            span.subtitle News
-            li.newsLi
-              a(href='#News1') News1
-            li.newsLi
-              a(href='#News2') News2
-            li.newsLi
-        
-             a(href='#News3') News3
-            li.newsLi
-              a(href='#News4') News4
-            li.newsLi
-              a(href='#News5') News5
-          // End of ul class news
-          ul.events
-            span.subtitle Events
-            li.eventsLi
-              a(href='#Event1') Event1
-            li.eventsLi
-              a(href='#Event2') Event2
-            li.eventsLi
-              a(href='#Event3') Event3
-            li.eventsLi
-              a(href='#Event4') Event5
-            li.eventsLi
-              a(href='#Event5') Event4
-          // End of ul class events
-        // End of sideMenu
+          include helpers/sideMenu.jade
         .articleSection
           .navbar
             ul.topnav

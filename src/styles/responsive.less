@@ -1,5 +1,7 @@
 /*FOR DESKTOP*/
-@media only screen and (min-device-width:1024px) {
+@import 'variables';
+
+@media only screen and (min-width:1024px) {
 .headerLeft{
   width: 30%;
   height: 100%;
@@ -21,9 +23,32 @@
 ul.topnav li.icon {
   display: none;
 }
+.sideMenu {
+  float: left;
+  width: 30%;
+  height: 100%;
+  background-color: #fff; 
+  float: left;
+  ul{
+    list-style-type: none;
+    }
+  a:active, a:link, a:visited {
+    text-decoration: none;
+    color: @primaryCol;
+  }
+  a:hover{
+    background-color: @secondaryColor;
+  }
+}
+.articleSection {
+  width: 70%;
+  height: 100%;
+  background-color: #fff;
+  float:left;
+  }
 }
 /*FOR TABLETS*/
-@media only screen and (min-device-width:768px) and (max-device-width:1024px) {
+@media (min-width:768px) and (max-width:1024px) {
   .headerLeft{
   width: 30%;
   height: 100%;
@@ -38,10 +63,33 @@ ul.topnav li.icon {
   padding-right: 5vh;
 }
 .container{
-  width: 85%;
+  width: 90%;
   margin: 0 auto;
 }
 ul.topnav li.icon {display: none;}
+.sideMenu {
+  float: left;
+  width: 30%;
+  height: 100%;
+  background-color: #fff; 
+  float: left;
+  ul{
+    list-style-type: none;
+    }
+  a:active, a:link, a:visited {
+    text-decoration: none;
+    color: @primaryCol;
+  }
+  a:hover{
+    background-color: @secondaryColor;
+  }
+}
+.articleSection {
+  width: 70%;
+  height: 100%;
+  background-color: #fff;
+  float:left;
+  }
 }
 /*FOR MOBILE*/
 @media only screen and (max-width:768px) {
@@ -78,4 +126,31 @@ ul.topnav.responsive li a {
   display: block;
   text-align: left;
 }
+.sideMenu {
+  float: left;
+  width: 100%;
+  height: 100%;
+  background-color: #fff; 
+  float: left;
+  text-align: center;
+  ul{
+    list-style-type: none;
+    }
+  ul li {
+    display: inline;
+  }
+  a:active, a:link, a:visited {
+    text-decoration: none;
+    color: @primaryCol;
+  }
+  a:hover{
+    background-color: @secondaryColor;
+  }
+}
+.articleSection {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  float:left;
+  }
 }

@@ -1,11 +1,4 @@
-@primaryCol: #097777;
-@secondaryColor: #41F0F0;
-@visitedLink: #0ca6a6;
-@title1: 2rem;
-@pSize1: 1.4rem; 
-@pSize2: 1rem;
-@subtitle: 1.2rem;
-
+@import 'variables';
 
 *{
   box-sizing: border-box;
@@ -45,6 +38,7 @@ p{
   width: 10vw;
   -webkit-transition: width 1.5s, height 1.5s, -webkit-transform 1.5s;
   transition: width 1.5s, height 1.5s, transform 1.5s;
+  border-radius: 50%;
 }
 
 .logo:hover{
@@ -99,30 +93,6 @@ p{
 	height: 70%;
   margin-left: 5%;
 	}
-.sideMenu {
-	float: left;
-	width: 30%;
-	height: 100%;
-  background-color: #fff; 
-  float: left;
-  ul{
-    list-style-type: none;
-    }
-  a:active, a:link, a:visited {
-    text-decoration: none;
-    color: @primaryCol;
-  }
-  a:hover{
-    text-decoration: underline;
-  }
-}
-.articleSection {
-	width: 70%;
-	height: 100%;
-  background-color: #fff;
-	float:left;
-  }
-
 .newsContainer{
 	width: 100%;
   margin-top: 10%;
@@ -198,6 +168,7 @@ input[type=text]:focus, input[type="password"]:focus {
 input[type=button], input[type=submit], input[type=reset] {
   .standard;
 background-color:@primaryCol;
+color: #ffffff;
   &:hover{
     text-decoration: underline;
     }

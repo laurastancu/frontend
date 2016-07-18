@@ -3,7 +3,7 @@ mixin sideMenuList(name,elements,links)
     span.subtitle #{name}
     each val in elements
       li
-        a(href="#") #{val}
+        a.sidemenu(href="#") #{val}
 
 mixin indexNewsFormat()
   .detailedNews

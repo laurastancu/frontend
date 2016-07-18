@@ -1,4 +1,7 @@
 /*FOR DESKTOP*/
+
+@import 'variables';
+
 @media only screen and (min-width:1024px) {
 .headerLeft{
   width: 30%;
@@ -21,9 +24,58 @@
 ul.topnav li.icon {
   display: none;
 }
+.sideMenu {
+  float: left;
+  width: 30%;
+  height: 100%;
+  background-color: #fff; 
+  float: left;
+  ul{
+    list-style-type: none;
+    }
+  a:active, a:link, a:visited {
+    text-decoration: none;
+    color: @primaryCol;
+  }
+  a:hover{
+    background-color: @secondaryColor;
+  }
+}
+.articleSection {
+  width: 70%;
+  height: 100%;
+  background-color: #fff;
+  float:left;
+  }
+.standard{
+  width: 15vw;
+  border: 2px solid @primaryCol;
+  border-radius: 4px;
+  font-size: @pSize1;
+}
+.login{
+  input[type=text], input[type="password"]{
+    .standard;
+  }
+  input[type=text]:focus, input[type="password"]:focus {
+    background-color: @secondaryColor;
+  }
+  input[type=button], input[type=submit], input[type=reset] {
+    .standard;
+  background-color:@primaryCol;
+  color: #ffffff;
+    &:hover{
+      text-decoration: underline;
+      }
+  }
+  label{
+    display: inline-block;;
+    width: 10vw;
+}
+}
 }
 /*FOR TABLETS*/
-@media only screen and (min-width:768px) and (max-width:1024px) {
+@media (min-width:768px) and (max-width:1024px) {
   .headerLeft{
   width: 30%;
   height: 100%;
@@ -39,19 +91,71 @@ ul.topnav li.icon {
 }
 .container{
   width: 95%;
+  width: 90%;
   margin: 0 auto;
 }
 ul.topnav li.icon {display: none;}
+.sideMenu {
+  float: left;
+  width: 30%;
+  height: 100%;
+  background-color: #fff; 
+  float: left;
+  ul{
+    list-style-type: none;
+    }
+  a:active, a:link, a:visited {
+    text-decoration: none;
+    color: @primaryCol;
+  }
+  a:hover{
+    background-color: @secondaryColor;
+  }
+}
+.articleSection {
+  width: 70%;
+  height: 100%;
+  background-color: #fff;
+  float:left;
+  }
+.standard{
+  width: 20vw;
+  border: 2px solid @primaryCol;
+  border-radius: 4px;
+  font-size: @pSize1;
+}
+.login{
+  input[type=text], input[type="password"]{
+    .standard;
+  }
+  input[type=text]:focus, input[type="password"]:focus {
+    background-color: @secondaryColor;
+  }
+  input[type=button], input[type=submit], input[type=reset] {
+    .standard;
+  background-color:@primaryCol;
+  color: #ffffff;
+    &:hover{
+      text-decoration: underline;
+      }
+  }
+  label{
+    display: inline-block;;
+    width: 15vw;
+}
+}
 }
 /*FOR MOBILE*/
 @media only screen and (max-width:768px) {
 .headerLeft{
-  width: 100%;
+  width: 30%;
+  height: 100%;
   float: left;
   text-align: center;
 }
 .headerRight{
-  width: 100%;
+  width: 70%;
+  height: 100%;
   float: left;
   text-align: right;
   padding-right: 5vh;
@@ -77,5 +181,58 @@ ul.topnav.responsive li {
 ul.topnav.responsive li a {
   display: block;
   text-align: left;
+}
+.sideMenu {
+  float: left;
+  width: 100%;
+  height: 100%;
+  background-color: #fff; 
+  float: left;
+  text-align: center;
+  ul{
+    list-style-type: none;
+    }
+  ul li {
+    display: inline;
+  }
+  a:active, a:link, a:visited {
+    text-decoration: none;
+    color: @primaryCol;
+  }
+  a:hover{
+    background-color: @secondaryColor;
+  }
+}
+.articleSection {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  float:left;
+  }
+.standard{
+  width: 70%;
+  border: 2px solid @primaryCol;
+  border-radius: 4px;
+  font-size: @pSize1;
+}
+.login{
+  input[type=text], input[type="password"]{
+    .standard;
+  }
+  input[type=text]:focus, input[type="password"]:focus {
+    background-color: @secondaryColor;
+  }
+  input[type=button], input[type=submit], input[type=reset] {
+    .standard;
+  background-color:@primaryCol;
+  color: #ffffff;
+    &:hover{
+      text-decoration: underline;
+      }
+  }
+  label{
+    display: inline-block;;
+    width: 100%;
+}
 }
 }

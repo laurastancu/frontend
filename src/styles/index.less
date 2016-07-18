@@ -43,6 +43,14 @@ p{
 }
 .logo {
   width: 10vw;
+  -webkit-transition: width 1.5s, height 1.5s, -webkit-transform 1.5s;
+  transition: width 1.5s, height 1.5s, transform 1.5s;
+}
+
+.logo:hover{
+  width: 10vw;
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
 }
 
 .loginButton {

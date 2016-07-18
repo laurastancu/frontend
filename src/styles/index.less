@@ -13,8 +13,7 @@ body{
 
 p{
   font-size: @pSize1;
-  }
-
+}
 .title1{
   font-size: @title1;
   color: @primaryCol;
@@ -55,12 +54,12 @@ p{
   border: none;
   color: #fff;
   text-align: center;
-  font-size: 80%;
   padding: 2%;
   width: 30%;
   transition: all 0.5s;
   cursor: pointer;
   margin: 1%;
+  font-size: @subtitle;
   &:hover span{
         padding-right: 25px; 
   }
@@ -159,24 +158,6 @@ a.detailsLink:link, a.detailsLink:active, a.detailsLink:visited{
   border-radius: 4px;
   font-size: @pSize1;
 }
-input[type=text], input[type="password"]{
-  .standard;
-}
-input[type=text]:focus, input[type="password"]:focus {
-  background-color: @secondaryColor;
-}
-input[type=button], input[type=submit], input[type=reset] {
-  .standard;
-background-color:@primaryCol;
-color: #ffffff;
-  &:hover{
-    text-decoration: underline;
-    }
-}
-label{
- display: inline-block;;
- width: 10vw;
-}
 .link{
   color: @primaryCol;
   &:hover{
@@ -190,9 +171,21 @@ label{
 .center{
   text-align: center;
 }
-.search{
-  margin: 2%; 
+input.search[type=text]{
+  font-size: @subtitle;
+  line-height: 10%;
+  margin-top: 7%;
+  width: 90%;
+  border: 2px solid @primaryCol;
+  border-radius: 4px;
+  &:focus{
+    background-color: @secondaryColor;
   }
+}
+.search{
+  margin: 2%;
+  padding-left: 2%;
+}
 .subtitle{
   font-size: @subtitle;
   color: @primaryCol;
@@ -200,6 +193,7 @@ label{
   margin-bottom: 1%;
   font-weight: bold;
 }
+
 .theNews{
   width: 70%;
   float: left;
@@ -260,19 +254,28 @@ ul.topnav li a {
   padding: 14px 16px;
   text-decoration: none;
   transition: 0.3s;
-  font-size: 17px;
+  font-size: @subtitle;
+  height: 10%;
+  
+}
+ul.topnav li:last-child{
+  width: 20%;
 }
 
 ul.topnav li a:hover {background-color: @secondaryColor;}
-
-
-  .navbar{
+.navbar{
   float: left;
-  min-width: 100%;
-  height: 10%;
+  width: 100%;
+  max-height: 10%;
   margin-top: 1%;
   display: inline;
      &:after{
           .clear;
           }
   }
+a.sidemenu:link , a.sidemenu:active, a.sidemenu:visited {
+  font-size: @subtitle;
+}
+a.sidemenu:hover{
+  font-size: @subtitle;
+}

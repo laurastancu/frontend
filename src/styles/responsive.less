@@ -46,6 +46,32 @@ ul.topnav li.icon {
   background-color: #fff;
   float:left;
   }
+.standard{
+  width: 15vw;
+  border: 2px solid @primaryCol;
+  border-radius: 4px;
+  font-size: @pSize1;
+}
+.login{
+  input[type=text], input[type="password"]{
+    .standard;
+  }
+  input[type=text]:focus, input[type="password"]:focus {
+    background-color: @secondaryColor;
+  }
+  input[type=button], input[type=submit], input[type=reset] {
+    .standard;
+  background-color:@primaryCol;
+  color: #ffffff;
+    &:hover{
+      text-decoration: underline;
+      }
+  }
+  label{
+    display: inline-block;;
+    width: 10vw;
+}
+}
 }
 /*FOR TABLETS*/
 @media (min-width:768px) and (max-width:1024px) {
@@ -90,16 +116,44 @@ ul.topnav li.icon {display: none;}
   background-color: #fff;
   float:left;
   }
+.standard{
+  width: 20vw;
+  border: 2px solid @primaryCol;
+  border-radius: 4px;
+  font-size: @pSize1;
+}
+.login{
+  input[type=text], input[type="password"]{
+    .standard;
+  }
+  input[type=text]:focus, input[type="password"]:focus {
+    background-color: @secondaryColor;
+  }
+  input[type=button], input[type=submit], input[type=reset] {
+    .standard;
+  background-color:@primaryCol;
+  color: #ffffff;
+    &:hover{
+      text-decoration: underline;
+      }
+  }
+  label{
+    display: inline-block;;
+    width: 15vw;
+}
+}
 }
 /*FOR MOBILE*/
 @media only screen and (max-width:768px) {
 .headerLeft{
-  width: 100%;
+  width: 30%;
+  height: 100%;
   float: left;
   text-align: center;
 }
 .headerRight{
-  width: 100%;
+  width: 70%;
+  height: 100%;
   float: left;
   text-align: right;
   padding-right: 5vh;
@@ -153,4 +207,30 @@ ul.topnav.responsive li a {
   background-color: #fff;
   float:left;
   }
+.standard{
+  width: 70%;
+  border: 2px solid @primaryCol;
+  border-radius: 4px;
+  font-size: @pSize1;
+}
+.login{
+  input[type=text], input[type="password"]{
+    .standard;
+  }
+  input[type=text]:focus, input[type="password"]:focus {
+    background-color: @secondaryColor;
+  }
+  input[type=button], input[type=submit], input[type=reset] {
+    .standard;
+  background-color:@primaryCol;
+  color: #ffffff;
+    &:hover{
+      text-decoration: underline;
+      }
+  }
+  label{
+    display: inline-block;;
+    width: 100%;
+}
+}
 }

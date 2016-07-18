@@ -3,18 +3,18 @@ mixin sideMenuList(name,elements,links)
     span.subtitle #{name}
     each val in elements
       li
-        a(href="#") #{val}
+        a.sidemenu(href="#") #{val}
 
 mixin indexNewsFormat()
   .detailedNews
     a.detailsLink(href='details.html')
       img.newsImage(src=' ../../img/newsImage.jpg', alt='News Image')
-    .newsDesc
-      a(href='details.html') Lorem ipsum dolor sit amet
-                br
-                a.detailsLink(href='details.html')
-                 |             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquam pulvinar eros eu dignissim. Proin commodo quam a purus aliquet aliquam. Sed at erat leo. Sed nec fermentum odio, vitae sodales quam. Nam cursus arcu in neque aliquam,
-                 |               sit amet tincidunt metus congue. Vivamus condimentum eros venenatis sem vehicula lobortis. Nam pharetra orci ut vestibulum accumsan. Sed pretium, mauris non vestibulum ornare, metus turpis elementum massa, at sollicitudin neque quam quisnibh.
+    .newsDesc(onload='getNews()')
+      //- a(href='details.html') Lorem ipsum dolor sit amet
+      //-           br
+      //-           a.detailsLink(href='details.html')
+      //-            |             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquam pulvinar eros eu dignissim. Proin commodo quam a purus aliquet aliquam. Sed at erat leo. Sed nec fermentum odio, vitae sodales quam. Nam cursus arcu in neque aliquam,
+      //-            |               sit amet tincidunt metus congue. Vivamus condimentum eros venenatis sem vehicula lobortis. Nam pharetra orci ut vestibulum accumsan. Sed pretium, mauris non vestibulum ornare, metus turpis elementum massa, at sollicitudin neque quam quisnibh.
     // End of newsDesc
     // End of detailedNews  
 

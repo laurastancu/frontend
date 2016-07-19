@@ -3,7 +3,7 @@ doctype
 
 html
   include helpers/head.jade
-  body
+  body(onload='getNews()')
     .container
       include helpers/header.jade
       .content
@@ -39,3 +39,4 @@ html
     // End of container
    
     script(src='../js/navbarFunction.js')
+    script(src='../js/requests.js', language='javascript', type='text/javascript')

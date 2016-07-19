@@ -4,7 +4,17 @@ $(document).ready(function () {
 });
 
 var url = 'http://172.16.226.36:8080/';
-var response= {}
+var response= {"news":[
+  {"datetime":"29.07.2034","id":"1","title":"first news","subtitle":"This is the first news in object",
+  "description":"sadasdas dsadasdas dasd asdasdasdasdasd dsadasd","authors":"sadfadfs","categories":"movie", "source":"www.goagal.ro",
+  "body":"sadasdasddasd asdasdasdas sad as das dasd  sadas news conteeeeeeeeeeeeeeeeeeeeeeeeent asdsa dasdasdad asdsadas","image_id":"image id","thumbnail_id":"stringgg","external_url":"external url","location":"craiova"},
+  {"datetime":"28.07.2034","id":"2","title":"second news","subtitle":"This is the first news in object",
+  "description":"sadasdas dsadasdas dasd asdasdasdasdasd dsadasd","authors":"sadfadfs","categories":"movie", "source":"www.goagal.ro",
+  "body":"sadasdasddasd asdasdasdas sad as das dasd  sadas news conteeeeeeeeeeeeeeeeeeeeeeeeent asdsa dasdasdad asdsadas","image_id":"image id","thumbnail_id":"stringgg","external_url":"external url","location":"brasov"},
+  {"datetime":"27.07.2034","id":"3","title":"third news","subtitle":"This is the first news in object",
+  "description":"sadasdas dsadasdas dasd asdasdasdasdasd dsadasd","authors":"sadfadfs","categories":"movie", "source":"www.goagal.ro",
+  "body":"sadasdasddasd asdasdasdas sad as das dasd  sadas news conteeeeeeeeeeeeeeeeeeeeeeeeent asdsa dasdasdad asdsadas","image_id":"image id","thumbnail_id":"stringgg","external_url":"external url","location":"craiova"}
+]}
 
 function getNews() {
 var XMLHttp = new XMLHttpRequest();

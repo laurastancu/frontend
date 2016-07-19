@@ -1,7 +1,7 @@
-var url = 'http://172.16.226.33:8080/';
+var url = 'http://172.16.226.36:8080/';
+var XMLHttp = new XMLHttpRequest();
 
 function getNews() {
-XMLHttp = new XMLHttpRequest();
     XMLHttp.onreadystatechange = function() {
     if (XMLHttp.readyState == 4 && XMLHttp.status == 200) {
       document.getElementsByClass('newsDesc').innerHTML = XMLHttp.responseText;

@@ -1,3 +1,8 @@
+$(document).ready(function () {
+  //getNews();
+  showNews();
+});
+
 var url = 'http://172.16.226.36:8080/';
 var response= {}
 
@@ -16,5 +21,36 @@ XMLHttp.open("GET", url + "webapp/news?startDate=" + startDate, true);
 XMLHttp.send();
 }
 function showNews(news){
-   
+   console.log("aaaa");
+
+   var sampleResponse = [
+     {
+      "news_title": "test title1",
+      "news_body": "test body"
+     },
+     {
+      "news_title": "test title2",
+      "news_body": "test body"
+     },
+     {
+      "news_title": "test title3",
+      "news_body": "test body"
+     },
+     {
+      "news_title": "test title4",
+      "news_body": "test body"
+     },
+   ];
+
+  var source   = $("#entry-template").html();
+  var template = Handlebars.compile(source);
+
+  var theNews = "";
+  for (var i in sampleResponse) {
+    theNews += "<div>" + sampleResponse[i].news_title + "</div>";
+  }
+  $(".newsContainer").html(theNews);
+
+
+  //console.log(template(sampleResponse));
 }

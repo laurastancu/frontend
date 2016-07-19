@@ -3,7 +3,10 @@ doctype
 
 html
   include helpers/head.jade
-  body(onload='getNews()')
+  body
+    script#entry-template(type="text/x-handlebars-template")
+      +indexNewsFormat()
+
     .container
       include helpers/header.jade
       .content
@@ -38,5 +41,7 @@ html
       include helpers/footer.jade
     // End of container
    
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+    script(src='../js/handlebars.min-latest.js')
     script(src='../js/navbarFunction.js')
     script(src='../js/requests.js')

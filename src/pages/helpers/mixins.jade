@@ -7,6 +7,7 @@ mixin sideMenuList(name,elements,links)
         a.sidemenu(href="#") #{val}
 
 mixin indexNewsFormat()
+  |{{#newsList}}
   .detailedNews
     a.detailsLink(href='details.html')
       img.newsImage(src='http://172.16.226.36:8080/images/{{news_image_id}}', alt='News Image')
@@ -18,6 +19,7 @@ mixin indexNewsFormat()
             a.detailsLink(href='details.html') {{news_body}}
     // End of newsDesc
     // End of detailedNews  
+  |{{/newsList}}
 
 mixin miniNews()
   .advertise

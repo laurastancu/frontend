@@ -1,17 +1,19 @@
-var url = 'http://172.16.226.36:8080/';
-newsRequest = new XMLHttpRequest();
+var url = 'http://172.16.226.33:8080/';
 
 function getNews() {
-    newsRequest.onreadystatechange = function() {
-    if (newsRequest.readyState==4&&newsRequest.status==200) {
-      document.getElementsByClass('newsDesc').innerHTML = newsRequest.responseText;
-      console.log('You made it');
-    } else{
-      document.getElementsByClass('newsDesc').innerHTML = "Waiting For Server Response... ";
-      console.log('It`s pending...');
+var XMLHttp = new XMLHttpRequest();
+    XMLHttp.onreadystatechange = function() {
+    if (XMLHttp.readyState == 4 && XMLHttp.status == 200) {
+      document.getElementsByClassName('newsDesc').innerHTML = XMLHttp.responseText;
+      console.log('You made it!');
+    } else {
+        document.getElementsByClassName('newsDesc').innerHTML = "Waiting For Server Response... ";
+        console.log('dasdasdas');
     } 
-  }
-
-  newsRequest.open("GET", "http://172.16.226.36:8080/webapp/news", true);
-  newsRequest.send();
+  };
+  XMLHttp.open("GET", url + "webapp/news", true);
+  XMLHttp.send();
+}
+function show2(){
+    document.getElementsByClassName('content').innerHTML='asdasdasd';
 }

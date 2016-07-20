@@ -15,13 +15,6 @@ mixin indexNewsFormat()
             a(href='details.html') {{title}}
           div
             a.detailsLink(href='details.html') {{body}}
-      img.newsImage(src='', alt='News Image')
-
-    .newsDesc(onload='getNews()')
-          div
-            a(href='details.html') {{title}}
-          div
-            a.detailsLink(href='details.html') {{body}}
     // End of newsDesc
     // End of detailedNews  
   |{{/each}}

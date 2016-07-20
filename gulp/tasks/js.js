@@ -9,7 +9,7 @@ var path = require('../utils/paths'),
     handleErrors = require('../utils/handleErrors');
 
 gulp.task('js:merge', function() {
-  return gulp.src('./' + path.src.js + '/*.js')
+  return gulp.src('./' + path.src.js + '/*.*')
       .on('error', handleErrors)
       .pipe($.include())
       .pipe(gulp.dest(path.dist.js));

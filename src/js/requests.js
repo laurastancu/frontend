@@ -18,7 +18,7 @@ var response= {"news":[
 
 function getNews() {
 var XMLHttp = new XMLHttpRequest();
-var startDate=(new Date).getTime();
+var startDate = (new Date).getTime();
 
     XMLHttp.onreadystatechange = function() {
     if (XMLHttp.readyState == 4 && XMLHttp.status == 200) {

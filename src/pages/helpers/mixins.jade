@@ -10,13 +10,12 @@ mixin indexNewsFormat()
   |{{#newsList}}
   .detailedNews
     a.detailsLink(href='details.html')
-      img.newsImage(src='http://172.16.226.36:8080/images/{{news_image_id}}', alt='News Image')
-
+      img.newsImage(src="http://172.16.226.36:8080/webapp/images/", alt='News Image')
     .newsDesc(onload='getNews()')
           div
-            a(href='details.html') {{news_title}}
+            a(href='details.html') {{title}}
           div
-            a.detailsLink(href='details.html') {{news_body}}
+            a.detailsLink(href='details.html') {{body}}
     // End of newsDesc
     // End of detailedNews  
   |{{/newsList}}

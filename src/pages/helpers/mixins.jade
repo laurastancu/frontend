@@ -1,4 +1,3 @@
-
 mixin sideMenuList(name,elements,links)
   ul
     span.subtitle #{name}
@@ -7,7 +6,7 @@ mixin sideMenuList(name,elements,links)
         a.sidemenu(href="#") #{val}
 
 mixin indexNewsFormat()
-  |{{#newsList}}
+  |{{#each news}}
   .detailedNews
     a.detailsLink(href='details.html')
       img.newsImage(src="http://172.16.226.36:8080/webapp/images/", alt='News Image')
@@ -16,9 +15,16 @@ mixin indexNewsFormat()
             a(href='details.html') {{title}}
           div
             a.detailsLink(href='details.html') {{body}}
+      img.newsImage(src='', alt='News Image')
+
+    .newsDesc(onload='getNews()')
+          div
+            a(href='details.html') {{this.title}}
+          div
+            a.detailsLink(href='details.html') {{this.body}}
     // End of newsDesc
     // End of detailedNews  
-  |{{/newsList}}
+  |{{/each}}
 
 mixin miniNews()
   .advertise

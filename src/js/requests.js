@@ -2,6 +2,7 @@
 $(document).ready(function () {
   if (window.location.pathname === "/html/index.html") {
     getNews();
+    //getCategories();
   } else if (window.location.pathname === "/html/details.html") {
     checkNewsId();  
   }
@@ -14,14 +15,28 @@ var startDate = (new Date).getTime();
     XMLHttp.onreadystatechange = function() {
     if (XMLHttp.readyState == 4 && XMLHttp.status == 200) {
       var responseOb= JSON.parse(XMLHttp.responseText);
-      // showNews(response);
-      
+          
       showNews(responseOb);
       }
   }
 
   XMLHttp.open("GET","../js/response.json");
   XMLHttp.send();
+}
+function getCategories(){
+var XMLHttp = new XMLHttpRequest();
+var startDate = (new Date).getTime();
+
+    XMLHttp.onreadystatechange = function() {
+    if (XMLHttp.readyState == 4 && XMLHttp.status == 200) {
+      var responseOb= JSON.parse(XMLHttp.responseText);
+          
+      showNews(responseOb);
+      }
+  }
+
+  XMLHttp.open("GET","../js/response.json");
+  XMLHttp.send();  
 }
 
 function showNews(news){

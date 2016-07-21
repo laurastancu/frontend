@@ -4,9 +4,7 @@ html
   head
     include helpers/head.jade
 
-  body
-    script#entry-template(type="text/x-handlebars-template")
-      +indexNewsFormat()
+  body   
 
     .container
       include helpers/header.jade
@@ -31,6 +29,8 @@ html
                   input.search(type='text', placeholder='Search...')
           // End of navBar
           .newsContainer
+            script#entry-template(type="text/x-handlebars-template")
+              +indexNewsFormat()
             //- +indexNewsFormat()
             //- +indexNewsFormat()
             //- +indexNewsFormat()

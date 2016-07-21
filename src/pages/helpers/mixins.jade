@@ -1,9 +1,18 @@
-mixin sideMenuList(name,elements,links)
+mixin newsCategories(name)
   ul
     span.subtitle #{name}
-    each val in elements
-      li
-        a.sidemenu(href="#") #{val}
+    |{{#each categories}}
+    li
+      a.sidemenu(href="#") {{this}}
+    |{{/each}}    
+
+mixin eventsType(name)
+  ul
+    span.subtitle #{name}
+    |{{#each events}}
+    li
+      a.sidemenu(href="#") {{this.Type}}
+    |{{/each}}    
 
 mixin indexNewsFormat()
   |{{#each news}}

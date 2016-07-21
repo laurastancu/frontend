@@ -2,7 +2,8 @@
 $(document).ready(function () {
   if (window.location.pathname === "/html/index.html") {
     getNews();
-    //getCategories();
+    getCategories();
+    getEvents();
   } else if (window.location.pathname === "/html/details.html") {
     checkNewsId();  
   }
@@ -25,18 +26,35 @@ var startDate = (new Date).getTime();
 }
 function getCategories(){
 var XMLHttp = new XMLHttpRequest();
-var startDate = (new Date).getTime();
 
     XMLHttp.onreadystatechange = function() {
     if (XMLHttp.readyState == 4 && XMLHttp.status == 200) {
-      var responseOb= JSON.parse(XMLHttp.responseText);
-          
-      showNews(responseOb);
+      var categ= JSON.parse(XMLHttp.responseText);
+      showCategories(categ);
       }
   }
 
-  XMLHttp.open("GET","../js/response.json");
+  XMLHttp.open("GET","../js/categories.json");
   XMLHttp.send();  
+}
+function getEvents(){
+var XMLHttp = new XMLHttpRequest();
+
+    XMLHttp.onreadystatechange = function() {
+    if (XMLHttp.readyState == 4 && XMLHttp.status == 200) {
+      var events= JSON.parse(XMLHttp.responseText);
+      showEvents(events);
+      console.log(events);
+      }
+  }
+  XMLHttp.open("GET","../js/events.json");
+  XMLHttp.send();
+}
+function showEvents(events){
+  placeTemplate("#sideMenu-events",".events-container",{"events":events});
+}
+function showCategories(categories){
+  placeTemplate("#sideMenu-categories",".category-container",categories);
 }
 
 function showNews(news){
@@ -56,10 +74,24 @@ function checkNewsId() {
   if (theId === false) {
     location.href = "/html/index.html";
   } else {
-    console.log("retriving the news details for: ", theId);
-
-    //placeTemplate("#ewqe", ".wqeqe", news);
+    //request dupa id
+    getNewsById(theId);
   }
+}
+
+function getNewsById(id){
+  var XMLHttp = new XMLHttpRequest();
+
+    XMLHttp.onreadystatechange = function() {
+    if (XMLHttp.readyState == 4 && XMLHttp.status == 200) {
+      var news= JSON.parse(XMLHttp.responseText);
+       
+      console.log(news);
+      }
+  }
+
+  XMLHttp.open("GET","../js/response.json");
+  XMLHttp.send();  
 }
 
 function getParameterByName(name, url) {

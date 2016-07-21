@@ -1,8 +1,9 @@
 include mixins.jade
-- var news=['Politics','Sport','Business','School','Local News']
-- var events=['Politics','Sport','Business','School','Local Events']
-
 
 span.title1 Categories
-+sideMenuList('News', news, links)
-+sideMenuList('Events', events, links)
+.category-container
+  script#sideMenu-categories(type="text/x-handlebars-template")
+    +newsCategories('News')
+.events-container
+  script#sideMenu-events(type="text/x-handlebars-template")
+    +eventsType('Events')

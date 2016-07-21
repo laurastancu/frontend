@@ -1,9 +1,7 @@
-include mixins.jade
-
 span.title1 Categories
 .category-container
   script#sideMenu-categories(type="text/x-handlebars-template")
-    +newsCategories('News')
+    include newsCategories.jade
 .events-container
   script#sideMenu-events(type="text/x-handlebars-template")
-    +eventsType('Events')
+    include eventsType.jade

@@ -10,36 +10,34 @@ html
       include helpers/header.jade
       .content
         .theNews
-          .newsBigImage
-            img(src='../img/newsImage.jpg')
-            // image div
-          .newsTitle
-            p.title1 Lorem ipsum dolor sit amet
-            // title div
-          .clear
-          div
-            p 
-          p.title1  News
-          .row
-            +miniNews()
-            +miniNews()
-            +miniNews()
-          p.title1  Events
-          .row
-            +miniNews()
-            +miniNews()
-            +miniNews()
-            // news description + events + news
-          // End of newsDetails
+          script#detailsPage-template(type="text/x-handlebars-template")
+            .newsBigImage
+              img(src='../img/newsImage.jpg')
+              // image div
+            .newsTitle
+              p.title1 {{news.title}}
+              // title div
+            .clear
+            div
+              p {{news.body}}
+            p.title1  News
+            .row
+              +miniNews()
+              +miniNews()
+              +miniNews()
+            p.title1  Events
+            .row
+              +miniNews()
+              +miniNews()
+              +miniNews()
+              // news description + events + news
+            // End of newsDetails
+        .clear
         .newsRightColumn
           +moreAbout()
-          +moreAbout()
-          +moreAbout()
-          +moreAbout()
-          +moreAbout()
-          +moreAbout()
-          +moreAbout()
-        .clear
+        //-   +moreAbout()
+        //-   +moreAbout()
+        //-   +moreAbout()
       include helpers/footer.jade  
       // End of Content
       

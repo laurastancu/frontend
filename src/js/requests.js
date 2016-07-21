@@ -61,20 +61,11 @@ function showNews(news){
   placeTemplate("#entry-template", ".newsContainer", {"news": news});
 }
 
-function placeTemplate (templateSelector, containerSelector, detailsObj) {
-  var source = $(templateSelector).html();
-  var template = Handlebars.compile(source);
-
-  var theNews = template(detailsObj);
-  $(containerSelector).html(theNews);
-}
-
 function checkNewsId() {
   var theId = getParameterByName("id");
   if (theId === false) {
     location.href = "/html/index.html";
   } else {
-    //request dupa id
     getNewsById(theId);
   }
 }
@@ -85,13 +76,15 @@ function getNewsById(id){
     XMLHttp.onreadystatechange = function() {
     if (XMLHttp.readyState == 4 && XMLHttp.status == 200) {
       var news= JSON.parse(XMLHttp.responseText);
-       
-      console.log(news);
+       showDetails(news);
       }
   }
 
-  XMLHttp.open("GET","../js/response.json");
+  XMLHttp.open("GET","../js/news.json?id="+id);
   XMLHttp.send();  
+}
+function showDetails(theNews){
+   placeTemplate("#detailsPage-template",".theNews",{"news":theNews});
 }
 
 function getParameterByName(name, url) {
@@ -102,4 +95,12 @@ function getParameterByName(name, url) {
     if (!results) return false;
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+function placeTemplate (templateSelector, containerSelector, detailsObj) {
+  var source = $(templateSelector).html();
+  var template = Handlebars.compile(source);
+
+  var theNews = template(detailsObj);
+  $(containerSelector).html(theNews);
 }

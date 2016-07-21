@@ -1,33 +1,3 @@
-mixin newsCategories(name)
-  ul
-    span.subtitle #{name}
-    |{{#each categories}}
-    li
-      a.sidemenu(href="#") {{this}}
-    |{{/each}}    
-
-mixin eventsType(name)
-  ul
-    span.subtitle #{name}
-    |{{#each events}}
-    li
-      a.sidemenu(href="#") {{this.Type}}
-    |{{/each}}    
-
-mixin indexNewsFormat()
-  |{{#each news}}
-  .detailedNews
-    a.detailsLink(href='details.html?id={{id}}')
-      img.newsImage(src='../img/newsImage.jpg', alt='News Image')
-    .newsDesc(onload='getNews()')
-          div
-            a(href='details.html?id={{id}}') {{title}}
-          div
-            a.detailsLink(href='details.html?id={{id}}') {{body}}
-    // End of newsDesc
-    // End of detailedNews
-  |{{/each}}
-
 mixin miniNews()
   .advertise
     p.subtitle news title

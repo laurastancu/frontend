@@ -3,9 +3,7 @@ doctype html
 html
   head
     include helpers/head.jade
-
   body   
-
     .container
       include helpers/header.jade
       .content
@@ -30,11 +28,7 @@ html
           // End of navBar
           .newsContainer
             script#entry-template(type="text/x-handlebars-template")
-              +indexNewsFormat()
-            //- +indexNewsFormat()
-            //- +indexNewsFormat()
-            //- +indexNewsFormat()
-            //- +indexNewsFormat()
+              include helpers/newsFormat.jade
           // End of newsContainer
         // End of articleSection
         .clear

@@ -22,22 +22,19 @@ html
               p {{news.body}}
             p.title1  News
             .row
-              +miniNews()
-              +miniNews()
-              +miniNews()
+              include helpers/miniNews.jade
+              include helpers/miniNews.jade
+              include helpers/miniNews.jade
             p.title1  Events
             .row
-              +miniNews()
-              +miniNews()
-              +miniNews()
+              include helpers/miniNews.jade
+              include helpers/miniNews.jade
+              include helpers/miniNews.jade
               // news description + events + news
             // End of newsDetails
         .clear
         .newsRightColumn
-          +moreAbout()
-        //-   +moreAbout()
-        //-   +moreAbout()
-        //-   +moreAbout()
+          include helpers/moreAbout.jade
       include helpers/footer.jade  
       // End of Content
       

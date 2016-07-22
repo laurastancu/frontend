@@ -7,32 +7,57 @@ html
     .container
       include helpers/header.jade
       .content
-        .theNews
-          script#detailsPage-template(type="text/x-handlebars-template")
-            .newsBigImage
-              img(src='../img/newsImage.jpg')
-              // image div
-            .newsTitle
-              p.title1 {{news.title}}
-              // title div
-            .clear
-            div
-              p {{news.body}}
-            p.title1  News
-            .row
-              include helpers/miniNews.jade
-              include helpers/miniNews.jade
-              include helpers/miniNews.jade
-            p.title1  Events
-            .row
-              include helpers/miniNews.jade
-              include helpers/miniNews.jade
-              include helpers/miniNews.jade
-              // news description + events + news
-            // End of newsDetails
-        
-        .newsRightColumn
-          include helpers/moreAbout.jade
+        //- .category-container
+        //-     script#sideMenu-categories(type="text/x-handlebars-template")
+        .sideMenu
+          include helpers/sideMenu.jade
+          span#showMore.moreAboutButton Show more about...
+          .newsLeftColumn
+            span.close &#x2612;
+            include helpers/moreAbout.jade
+            include helpers/moreAbout.jade
+            include helpers/moreAbout.jade
+            include helpers/moreAbout.jade
+        .newsSide
+          .navbar
+              ul.topnav
+                li
+                  a(href='#home') Home
+                li
+                  a(href='#brasov') Brasov
+                li
+                  a(href='#craiova') Craiova
+                li
+                  a(href='#sibiu') Sibiu
+                li.icon
+                  a(href='#', onclick='myFunction()') ☰
+                li
+                  form
+                    input.search(type='text', placeholder='Search...')
+          .theNews
+            script#detailsPage-template(type="text/x-handlebars-template")
+              .newsBigImage
+                img(src='../img/newsImage.jpg')
+                // image div
+              .newsTitle
+                p.title1 {{news.title}}
+                // title div
+              .clear
+              div
+                p {{news.body}}
+              p.title1  News
+              .row
+                include helpers/miniNews.jade
+                include helpers/miniNews.jade
+                include helpers/miniNews.jade
+              p.title1  Events
+              .row
+                include helpers/miniNews.jade
+                include helpers/miniNews.jade
+                include helpers/miniNews.jade
+                // news description + events + news
+              // End of newsDetails
+              
         .clear  
       include helpers/footer.jade  
       // End of Content

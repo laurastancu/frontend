@@ -6,5 +6,11 @@ $(document).ready(function(){
     $("#showLogInDiv").click(function(){
         $("#logInDiv").show();
         $("#registerDiv").hide();
+    });
+     $("#showMore").click(function(){
+        $(".newsLeftColumn").css('display','block');
+    });
+    $(".close").click(function(){
+        $(".newsLeftColumn").css('display','none');
     });   
 });

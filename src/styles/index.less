@@ -193,21 +193,10 @@ input.search[type=text]{
   margin-bottom: 1%;
   font-weight: bold;
 }
-
 .theNews{
-  width: 70%;
-  float: left;
+  width: 100%;
   text-align: justify;
-  padding: 1%;
-}
-.newsRightColumn{
-  width: 30%;
-  float: left;
-  border: 1px solid @primaryCol;
-  padding: 1%;
-  text-align: justify;
-}
-  
+}  
 .newsBigImage{
   float: left;
   width: 40%;
@@ -278,4 +267,12 @@ a.sidemenu:link , a.sidemenu:active, a.sidemenu:visited {
 }
 a.sidemenu:hover{
   font-size: @subtitle;
+}
+.close{
+  float:right;
+  color: @primaryCol;
+  font-size: @pSize1;
+  &:hover{
+    font-weight: bold;
+  }
 }

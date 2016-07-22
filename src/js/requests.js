@@ -6,6 +6,8 @@ $(document).ready(function () {
     getEvents();
   } else if (window.location.pathname === "/html/details.html") {
     checkNewsId();  
+    getCategories();
+    getEvents();
   }
 });
 

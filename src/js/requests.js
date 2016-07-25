@@ -10,6 +10,7 @@ $(document).ready(function () {
     getEvents();
     getMiniNews();
     getMiniEvents();
+    getMoreAbout();
   }
 });
 
@@ -148,4 +149,20 @@ var resultArray = [];
 
 function showMiniEvents(events){
   placeTemplate("#miniEvents-template", ".secondrow", {"event": events});
+}
+
+function getMoreAbout(){
+var XMLHttp = new XMLHttpRequest();
+var resultArray = [];
+    XMLHttp.onreadystatechange = function() {
+    if (XMLHttp.readyState == 4 && XMLHttp.status == 200) {
+      showMoreAbout(JSON.parse(XMLHttp.responseText));     
+      }
+  }
+  XMLHttp.open("GET","../js/moreAbout.json");
+  XMLHttp.send();
+}
+
+function showMoreAbout(about){
+  placeTemplate("#moreAbout-template", ".newsLeftColumn", {"about": about});
 }

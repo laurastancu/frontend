@@ -10,7 +10,7 @@ $(document).ready(function(){
      $("#showMore").click(function(){
         $(".newsLeftColumn").css('display','block');
     });
-    $(".close").click(function(){
+    $("#close").click(function(){
         $(".newsLeftColumn").css('display','none');
     });   
 });

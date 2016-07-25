@@ -2,7 +2,6 @@ doctype html
 html
   head
     include helpers/head.jade
-
   body
     .container
       include helpers/header.jade
@@ -13,11 +12,9 @@ html
           include helpers/sideMenu.jade
           span#showMore.moreAboutButton Show more about...
           .newsLeftColumn
-            span.close &#x2612;
-            include helpers/moreAbout.jade
-            include helpers/moreAbout.jade
-            include helpers/moreAbout.jade
-            include helpers/moreAbout.jade
+            script#moreAbout-template(type="text/x-handlebars-template")
+              span#close &#x2612;
+              include helpers/moreAbout.jade
         .newsSide
           include helpers/navbar.jade
           .theNews

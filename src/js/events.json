@@ -1,18 +1,18 @@
 [
   {
-    "Type": "Concert",
+    "Type": "Concerts",
     "Subtypes": [
       "rock",
       "classical"
     ]
   }, {
-    "Type": "Concert",
+    "Type": "Movies",
     "Subtypes": [
       "rock",
       "classical"
     ]
   }, {
-    "Type": "qqqq",
+    "Type": "Theatre",
     "Subtypes": [
       "rock",
       "classical"

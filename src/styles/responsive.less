@@ -92,6 +92,14 @@ ul.topnav li.icon {
 .moreAboutButton, #close{
   display: none;
 }
+.advertise{
+  width: 33%;
+  float: left;
+  p {
+    font-size: @pSize2;
+  }
+  padding: 1%;
+}
 }
 /*FOR TABLETS*/
 @media (min-width:768px) and (max-width:1024px) {
@@ -178,6 +186,14 @@ ul.topnav li.icon {display: none;}
 }
 .moreAboutButton , #close{
   display: none;
+}
+.advertise{
+  width: 33%;
+  float: left;
+  p {
+    font-size: @pSize2;
+  }
+  padding: 1%;
 }
 }
 /*FOR MOBILE*/
@@ -299,5 +315,12 @@ ul.topnav.responsive li a {
   &:hover{
     font-weight: bold;
   }
+}
+.advertise{
+  width: 100%;
+  p {
+    font-size: @pSize2;
+  }
+  padding: 1%;
 }
 }

@@ -9,22 +9,7 @@ html
         .sideMenu
           include helpers/sideMenu.jade
         .articleSection
-          .navbar
-            ul.topnav
-              li
-                a(href='#home') Home
-              li
-                a(href='#brasov') Brasov
-              li
-                a(href='#craiova') Craiova
-              li
-                a(href='#sibiu') Sibiu
-              li.icon
-                a(href='#', onclick='myFunction()') ☰
-              li
-                form
-                  input.search(type='text', placeholder='Search...')
-          // End of navBar
+          include helpers/navbar.jade
           .newsContainer
             script#entry-template(type="text/x-handlebars-template")
               include helpers/newsFormat.jade

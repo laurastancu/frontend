@@ -19,21 +19,7 @@ html
             include helpers/moreAbout.jade
             include helpers/moreAbout.jade
         .newsSide
-          .navbar
-              ul.topnav
-                li
-                  a(href='#home') Home
-                li
-                  a(href='#brasov') Brasov
-                li
-                  a(href='#craiova') Craiova
-                li
-                  a(href='#sibiu') Sibiu
-                li.icon
-                  a(href='#', onclick='myFunction()') ☰
-                li
-                  form
-                    input.search(type='text', placeholder='Search...')
+          include helpers/navbar.jade
           .theNews
             script#detailsPage-template(type="text/x-handlebars-template")
               .newsBigImage

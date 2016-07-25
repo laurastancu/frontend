@@ -45,18 +45,17 @@ html
               .clear
               div
                 p {{news.body}}
-              p.title1  News
-              .row
-                include helpers/miniNews.jade
-                include helpers/miniNews.jade
-                include helpers/miniNews.jade
-              p.title1  Events
-              .row
-                include helpers/miniNews.jade
-                include helpers/miniNews.jade
-                include helpers/miniNews.jade
-                // news description + events + news
-              // End of newsDetails
+          p.title1  News
+          .row
+            script#miniNews-template(type="text/x-handlebars-template")
+              include helpers/miniNews.jade
+          .clear
+          p.title1  Events
+          .secondrow
+            script#miniEvents-template(type="text/x-handlebars-template")
+              include helpers/miniEvents.jade
+            // news description + events + news
+          // End of newsDetails
               
         .clear  
       include helpers/footer.jade  

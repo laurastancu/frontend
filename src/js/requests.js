@@ -8,6 +8,8 @@ $(document).ready(function () {
     checkNewsId();  
     getCategories();
     getEvents();
+    getMiniNews();
+    getMiniEvents();
   }
 });
 
@@ -17,12 +19,10 @@ var startDate = (new Date).getTime();
 
     XMLHttp.onreadystatechange = function() {
     if (XMLHttp.readyState == 4 && XMLHttp.status == 200) {
-      var responseOb= JSON.parse(XMLHttp.responseText);
-          
+      var responseOb = JSON.parse(XMLHttp.responseText);
       showNews(responseOb);
       }
   }
-
   XMLHttp.open("GET","../js/response.json");
   XMLHttp.send();
 }
@@ -46,7 +46,6 @@ var XMLHttp = new XMLHttpRequest();
     if (XMLHttp.readyState == 4 && XMLHttp.status == 200) {
       var events= JSON.parse(XMLHttp.responseText);
       showEvents(events);
-      console.log(events);
       }
   }
   XMLHttp.open("GET","../js/events.json");
@@ -105,4 +104,48 @@ function placeTemplate (templateSelector, containerSelector, detailsObj) {
 
   var theNews = template(detailsObj);
   $(containerSelector).html(theNews);
+}
+
+function getFirstThree(myArray){
+  var resultArray = [] ;
+  var i = 0;
+  for (i=0;i<3;i++){
+    resultArray[i]= myArray[i];
+  }
+  return resultArray;
+}
+
+function getMiniNews() {
+var XMLHttp = new XMLHttpRequest();
+var startDate = (new Date).getTime();
+var resultArray=[];
+    XMLHttp.onreadystatechange = function() {
+    if (XMLHttp.readyState == 4 && XMLHttp.status == 200) {
+      resultArray = getFirstThree(JSON.parse(XMLHttp.responseText));
+      showMiniNews(resultArray);
+      }
+  }
+  XMLHttp.open("GET","../js/response.json");
+  XMLHttp.send();
+}
+
+function showMiniNews(news){
+  placeTemplate("#miniNews-template", ".row", {"news": news});
+}
+
+function getMiniEvents(){
+var XMLHttp = new XMLHttpRequest();
+var resultArray = [];
+    XMLHttp.onreadystatechange = function() {
+    if (XMLHttp.readyState == 4 && XMLHttp.status == 200) {
+      resultArray = getFirstThree(JSON.parse(XMLHttp.responseText));
+      showMiniEvents(resultArray);     
+       }
+  }
+  XMLHttp.open("GET","../js/events.json");
+  XMLHttp.send();
+}
+
+function showMiniEvents(events){
+  placeTemplate("#miniEvents-template", ".secondrow", {"event": events});
 }

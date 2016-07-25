@@ -1,51 +1,54 @@
-include helpers/head.jade
-body
-  .container
-    include helpers/header.jade
-    .content
-      .login
-        #logInDiv.center
-          p.title1 Log IN
-          form(action='', method='')
-            p
-              label(for='username') Username: 
-              input#username(type='text', name='username')
-            p
-              label(for='pass') Password: 
-              input#pass(type='password', name='pass')
-            label
-            input(type='submit', value='Log IN')
-            br
-            p
-              | If you are not registered, click 
-              span#showRegisterDiv.link here
-        #registerDiv.register.center
-          p.title1 Register
-          form(action='', method='')
-            p
-              label(for='rU') Username:
-              input#rU(type='text', name='rUsername')
-            p
-              label(for='rF') First Name:
-              input#rF(type='text', name='rFname')
-            p
-              label(for='rL') Last Name:
-              input#rL(type='text', name='rLname')
-            p
-              label(for='rE') E-mail:
-              input#rE(type='text', name='email')
-            p
-              label(for='rA') Adress:
-              input#rA(type='text', name='rUsername')
-            p
-              label(for='rO') Ocupation:
-              input#rO(type='text', name='rUsername')
-            label
-            input(type='submit', value='REGISTER')
-            br
-            p
-              | To go back click 
-              span#showLogInDiv.link here
-            br
-    include helpers/footer.jade
-  include helpers/scriptsImp.jade
+doctype html
+html
+  head
+    include helpers/head.jade
+  body
+    .container
+      include helpers/header.jade
+      .content
+        .login
+          #logInDiv.center
+            p.title1 Log IN
+            form(action='', method='')
+              p
+                label(for='username') Username: 
+                input#username(type='text', name='username')
+              p
+                label(for='pass') Password: 
+                input#pass(type='password', name='pass')
+              label
+              input(type='submit', value='Log IN')
+              br
+              p
+                | If you are not registered, click 
+                span#showRegisterDiv.link here
+          #registerDiv.register.center
+            p.title1 Register
+            form(action='', method='')
+              p
+                label(for='rU') Username:
+                input#rU(type='text', name='rUsername')
+              p
+                label(for='rF') First Name:
+                input#rF(type='text', name='rFname')
+              p
+                label(for='rL') Last Name:
+                input#rL(type='text', name='rLname')
+              p
+                label(for='rE') E-mail:
+                input#rE(type='text', name='email')
+              p
+                label(for='rA') Adress:
+                input#rA(type='text', name='rUsername')
+              p
+                label(for='rO') Ocupation:
+                input#rO(type='text', name='rUsername')
+              label
+              input(type='submit', value='REGISTER')
+              br
+              p
+                | To go back click 
+                span#showLogInDiv.link here
+              br
+      include helpers/footer.jade
+    include helpers/scriptsImp.jade

@@ -5,8 +5,13 @@
       "rock",
       "classical"
     ]
-  },
-  {
+  }, {
+    "Type": "Concert",
+    "Subtypes": [
+      "rock",
+      "classical"
+    ]
+  }, {
     "Type": "qqqq",
     "Subtypes": [
       "rock",

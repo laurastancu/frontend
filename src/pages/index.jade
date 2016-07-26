@@ -9,9 +9,6 @@ html
       //- Header partial
       include helpers/header.jade
       .content
-        .sideMenu
-          //- Side menu partial-used for categories
-          include helpers/sideMenu.jade
         .articleSection
           //- Navigation bar-used for link to home button and region filters
           include helpers/navbar.jade
@@ -20,6 +17,9 @@ html
             script#entry-template(type="text/x-handlebars-template")
               //- Partial containing the Handlebars iteration that fetches the homepage news
               include helpers/newsFormat.jade
+        .sideMenu
+          //- Side menu partial-used for categories
+          include helpers/sideMenu.jade
         //- Clearfix used for fixing layout issue
         .clear
       //- Footer partial containing footer 

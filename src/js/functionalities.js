@@ -14,3 +14,7 @@ $(document).ready(function(){
       $("#registerDiv").show();
     });
 });
+
+function myFunction() {
+  document.getElementsByClassName("topnav")[0].classList.toggle("responsive");
+}

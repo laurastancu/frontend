@@ -8,13 +8,6 @@ html
       .content
         //- .category-container
         //-     script#sideMenu-categories(type="text/x-handlebars-template")
-        .sideMenu
-          include helpers/sideMenu.jade
-          span#showMore.moreAboutButton Show more about...
-          .newsLeftColumn
-            script#moreAbout-template(type="text/x-handlebars-template")
-              span#close &#x2612;
-              include helpers/moreAbout.jade
         .newsSide
           include helpers/navbar.jade
           .theNews
@@ -37,9 +30,13 @@ html
           .secondrow
             script#miniEvents-template(type="text/x-handlebars-template")
               include helpers/miniEvents.jade
-            // news description + events + news
-          // End of newsDetails
-              
+        .sideMenu
+          include helpers/sideMenu.jade
+          span#showMore.moreAboutButton Show more about...
+          .newsLeftColumn
+            script#moreAbout-template(type="text/x-handlebars-template")
+              span#close &#x2612;
+              include helpers/moreAbout.jade
         .clear  
       include helpers/footer.jade  
       // End of Content

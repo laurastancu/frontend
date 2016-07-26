@@ -25,6 +25,19 @@ p{
   background-color: #ffffff;
 }
 
+input.search[type=text]{
+  font-size: @subtitle;
+  line-height: 10%;
+  width: 30%;
+  border: 2px solid @primaryCol;
+  border-radius: 4px;
+  margin: 1%;
+  padding: 1%;
+  &:focus{
+    background-color: @secondaryColor;
+  }
+}
+
 .content{
   width: 100%;
   min-height: 65%;
@@ -102,20 +115,6 @@ p{
   display: table;
   padding: 1%;
 }
-.newsImage{
-  width: 30%;
-	height: 100%;
-  padding: 1%;
-  float: left;
-}
-.newsDesc{
-	text-align: justify;
-	width: 70%;
-	height: 100%;
-  float: left;
-  &:after{
-    clear: both;
-  }
   a:link, a:active a:visited {
     text-decoration: none;
     color: @primaryCol;  
@@ -128,7 +127,6 @@ p{
   a:hover{
     text-decoration: underline;
   }
-}
 a.detailsLink:link, a.detailsLink:active, a.detailsLink:visited{
     text-transform: none;
     color: black;
@@ -171,21 +169,6 @@ a.detailsLink:link, a.detailsLink:active, a.detailsLink:visited{
 .center{
   text-align: center;
 }
-input.search[type=text]{
-  font-size: @subtitle;
-  line-height: 10%;
-  margin-top: 7%;
-  width: 90%;
-  border: 2px solid @primaryCol;
-  border-radius: 4px;
-  &:focus{
-    background-color: @secondaryColor;
-  }
-}
-.search{
-  margin: 2%;
-  padding-left: 2%;
-}
 .subtitle{
   font-size: @subtitle;
   color: @primaryCol;
@@ -197,20 +180,6 @@ input.search[type=text]{
   width: 100%;
   text-align: justify;
 }  
-.newsBigImage{
-  float: left;
-  width: 40%;
-  padding: 1%;
-  img{
-    max-width: 100%;
-    height: auto;
-  }
-}
-.newsTitle{
-  width: 60%;
-  float: left;
-  padding-left: 1%;
-}
 .row{
   width: 100%;
   height: auto;

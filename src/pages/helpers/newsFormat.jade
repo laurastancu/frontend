@@ -1,12 +1,15 @@
+//- Handlebars iteration used for adding the fetched news
 |{{#each news}}
 .detailedNews
+  //- Linking the news image to the details page
   a.detailsLink(href='details.html?id={{id}}')
     img.newsImage(src='../img/newsImage.jpg', alt='News Image')
+  //- Calling the function which fetches the news onload 
   .newsDesc(onload='getNews()')
+        //- Linking the news image to the news' title and body
         div
           a(href='details.html?id={{id}}') {{title}}
         div
           a.detailsLink(href='details.html?id={{id}}') {{body}}
-  // End of newsDesc
-  // End of detailedNews
 |{{/each}}
+

@@ -1,23 +1,28 @@
+//- Homepage
 doctype html
 html
   head
-    include helpers/head.jade
+    //- Head partial
+    include helpers/head.jade 
   body   
     .container
+      //- Header partial
       include helpers/header.jade
       .content
         .sideMenu
+          //- Side menu partial-used for categories
           include helpers/sideMenu.jade
         .articleSection
+          //- Navigation bar-used for link to home button and region filters
           include helpers/navbar.jade
           .newsContainer
+            //- Handlebars Template used for fetching homepage news
             script#entry-template(type="text/x-handlebars-template")
+              //- Partial containing the Handlebars iteration that fetches the homepage news
               include helpers/newsFormat.jade
-          // End of newsContainer
-        // End of articleSection
+        //- Clearfix used for fixing layout issue
         .clear
-      // End of Content
+      //- Footer partial containing footer 
       include helpers/footer.jade
-    // End of container
-   
+    //- Partial containing all scripts that need to be imported 
     include helpers/scriptsImp.jade

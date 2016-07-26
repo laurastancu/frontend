@@ -1,5 +1,7 @@
+//- News` categories fetching partial
 ul
   span.subtitle News
+  //- Handlebars iteration used for adding the fetched categories 
   |{{#each categories}}
   li
     a.sidemenu(href="#") {{this}}

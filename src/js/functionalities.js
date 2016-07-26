@@ -1,16 +1,16 @@
 $(document).ready(function(){
-    $("#showRegisterDiv").click(function(){
-        $("#logInDiv").hide();
-        $("#registerDiv").show();
+    $(document).on("click", "#close", function (e) {
+      $(".newsLeftColumn").css('display','none');
+
+    }).on("click", "#showMore", function (e) {
+      $(".newsLeftColumn").css('display','block');
+
+    }).on("click", "#showLogInDiv", function (e) {
+      $("#logInDiv").show();
+      $("#registerDiv").hide();
+      
+    }).on("click", "#showRegisterDiv", function (e) {
+      $("#logInDiv").hide();
+      $("#registerDiv").show();
     });
-    $("#showLogInDiv").click(function(){
-        $("#logInDiv").show();
-        $("#registerDiv").hide();
-    });
-     $("#showMore").click(function(){
-        $(".newsLeftColumn").css('display','block');
-    });
-    $("#close").click(function(){
-        $(".newsLeftColumn").css('display','none');
-    });   
 });

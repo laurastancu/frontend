@@ -7,7 +7,7 @@ html
       include helpers/header.jade
       .content
         .login
-          #logInDiv.center
+          #logInDiv.loginForm
             p.title1 Log IN
             form(action='', method='')
               p
@@ -22,29 +22,43 @@ html
               p
                 | If you are not registered, click 
                 span#showRegisterDiv.link here
-          #registerDiv.register.center
+          #registerDiv.register
             p.title1 Register
-            form(action='', method='')
+            form(name='registerForm')
               p
                 label(for='rU') Username:
                 input#rU(type='text', name='rUsername')
+                span#rUsername.errorMessage 
+              p
+                label(for='rP') Password:
+                input#rP(type='password', name='rPass')
+                span#rPass.errorMessage 
+              p
+                label(for='rP2') Retype-password:
+                input#rP2(type='password', name='rPass2')
+                span#rPass2.errorMessage 
               p
                 label(for='rF') First Name:
                 input#rF(type='text', name='rFname')
+                span#rFname.errorMessage   
               p
                 label(for='rL') Last Name:
                 input#rL(type='text', name='rLname')
+                span#rLname.errorMessage 
               p
                 label(for='rE') E-mail:
-                input#rE(type='text', name='email')
+                input#rE(type='text', name='Email')
+                span#Email.errorMessage 
               p
-                label(for='rA') Adress:
-                input#rA(type='text', name='rUsername')
+                label(for='rC') Country:
+                input#rC(type='text', name='Country')
+                span#Country.errorMessage 
               p
-                label(for='rO') Ocupation:
-                input#rO(type='text', name='rUsername')
+                label(for='rA') Age:
+                input#rA(type='text', name='Age')
+                span#Age.errorMessage 
               label
-              input(type='submit', value='REGISTER')
+              input(type='button', value='REGISTER' id='registerButton')
               br
               p
                 | To go back click 

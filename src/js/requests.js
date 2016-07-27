@@ -27,6 +27,12 @@ var startDate = (new Date).getTime();
   XMLHttp.open("GET","../js/response.json");
   XMLHttp.send();
 }
+function showNews(news){
+  placeTemplate("#entry-template", ".newsContainer", {"news": news});
+}
+
+
+
 function getCategories(){
 var XMLHttp = new XMLHttpRequest();
 
@@ -36,10 +42,17 @@ var XMLHttp = new XMLHttpRequest();
       showCategories(categ);
       }
   }
-
   XMLHttp.open("GET","../js/categories.json");
   XMLHttp.send();  
 }
+function showCategories(categories){
+  placeTemplate("#sideMenu-categories",".category-container",categories);
+}
+
+
+
+
+
 function getEvents(){
 var XMLHttp = new XMLHttpRequest();
 
@@ -55,13 +68,9 @@ var XMLHttp = new XMLHttpRequest();
 function showEvents(events){
   placeTemplate("#sideMenu-events",".events-container",{"events":events});
 }
-function showCategories(categories){
-  placeTemplate("#sideMenu-categories",".category-container",categories);
-}
 
-function showNews(news){
-  placeTemplate("#entry-template", ".newsContainer", {"news": news});
-}
+
+
 
 function checkNewsId() {
   var theId = getParameterByName("id");
@@ -71,7 +80,6 @@ function checkNewsId() {
     getNewsById(theId);
   }
 }
-
 function getNewsById(id){
   var XMLHttp = new XMLHttpRequest();
 
@@ -81,14 +89,12 @@ function getNewsById(id){
        showDetails(news);
       }
   }
-
   XMLHttp.open("GET","../js/news.json?id="+id);
   XMLHttp.send();  
 }
 function showDetails(theNews){
    placeTemplate("#detailsPage-template",".theNews",{"news":theNews});
 }
-
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;
     name = name.replace(/[\[\]]/g, "\\$&");
@@ -115,7 +121,6 @@ function getFirstThree(myArray){
   }
   return resultArray;
 }
-
 function getMiniNews() {
 var XMLHttp = new XMLHttpRequest();
 var startDate = (new Date).getTime();
@@ -129,10 +134,13 @@ var resultArray=[];
   XMLHttp.open("GET","../js/response.json");
   XMLHttp.send();
 }
-
 function showMiniNews(news){
   placeTemplate("#miniNews-template", ".row", {"news": news});
 }
+
+
+
+
 
 function getMiniEvents(){
 var XMLHttp = new XMLHttpRequest();
@@ -146,10 +154,13 @@ var resultArray = [];
   XMLHttp.open("GET","../js/events.json");
   XMLHttp.send();
 }
-
 function showMiniEvents(events){
   placeTemplate("#miniEvents-template", ".secondrow", {"event": events});
 }
+
+
+
+
 
 function getMoreAbout(){
 var XMLHttp = new XMLHttpRequest();
@@ -166,3 +177,51 @@ var resultArray = [];
 function showMoreAbout(about){
   placeTemplate("#moreAbout-template", ".newsLeftColumn", {"about": about});
 }
+
+
+
+
+// Location filters
+function checkNewsLocation() {
+  var theLocation = getParameterByName("location");
+  if (theLocation === false) {
+    location.href = "/html/index.html";
+  } else {
+    getNewsByLocation(theLocation);
+  }
+}
+function getNewsByLocation(location){
+  var XMLHttp = new XMLHttpRequest();
+
+    XMLHttp.onreadystatechange = function() {
+    if (XMLHttp.readyState == 4 && XMLHttp.status == 200) {
+      var locationFilter= JSON.parse(XMLHttp.responseText);
+       showDetails(news);
+      }
+  }
+
+  XMLHttp.open("GET","../js/news.json?location="+location);
+  XMLHttp.send();  
+}
+function showDetails(theNews){
+   placeTemplate("#detailsPage-template",".theNews",{"news":theNews});
+}
+
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return false;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+function placeTemplate (templateSelector, containerSelector, detailsObj) {
+  var source = $(templateSelector).html();
+  var template = Handlebars.compile(source);
+
+  var theNews = template(detailsObj);
+  $(containerSelector).html(theNews);
+}
+// End of location filters

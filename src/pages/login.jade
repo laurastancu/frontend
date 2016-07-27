@@ -24,7 +24,7 @@ html
                 span#showRegisterDiv.link here
           #registerDiv.register
             p.title1 Register
-            form(name='registerForm' onsubmit='return registerValidation()')
+            form(name='registerForm')
               p
                 label(for='rU') Username:
                 input#rU(type='text', name='rUsername')
@@ -50,15 +50,15 @@ html
                 input#rE(type='text', name='Email')
                 span#Email.errorMessage 
               p
-                label(for='rA') Address:
-                input#rA(type='text', name='Address')
-                span#Address.errorMessage 
+                label(for='rC') Country:
+                input#rC(type='text', name='Country')
+                span#Country.errorMessage 
               p
-                label(for='rO') Occupation:
-                input#rO(type='text', name='Occupation')
-                span#Occupation.errorMessage 
+                label(for='rA') Age:
+                input#rA(type='text', name='Age')
+                span#Age.errorMessage 
               label
-              input(type='submit', value='REGISTER')
+              input(type='button', value='REGISTER' id='registerButton')
               br
               p
                 | To go back click 

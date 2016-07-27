@@ -1,7 +1,11 @@
+//- Side menu partial 
 span.title1 Categories
 .category-container
+  //- Handlebars Template used for fetching news' categories in side menu
   script#sideMenu-categories(type="text/x-handlebars-template")
+    //- News categories fetching partial, containing Handlebars iteration to add fetched categories in side menu
     include newsCategories.jade
 .events-container
+  //- Handlebars Template used for fetching news' categories in side menu
   script#sideMenu-events(type="text/x-handlebars-template")
     include eventsType.jade

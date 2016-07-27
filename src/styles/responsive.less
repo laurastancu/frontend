@@ -29,7 +29,6 @@ ul.topnav li.icon {
   width: 30%;
   height: 100%;
   background-color: #fff; 
-  float: left;
   ul{
     list-style-type: none;
     }
@@ -45,7 +44,7 @@ ul.topnav li.icon {
   width: 70%;
   height: 100%;
   background-color: #fff;
-  float:left;
+  float: right;
   }
 .standard{
   width: 15vw;
@@ -75,7 +74,7 @@ ul.topnav li.icon {
 }
 .newsSide{
   width: 70%;
-  float: left;
+  float: right;
   text-align: justify;
   padding: 0 1% 1% 1%;  
 }
@@ -106,6 +105,49 @@ ul.topnav li.icon {
   color: #F44336;
   font-size: @pSize2;
   float: right;
+.newsImage{
+  width: 30%;
+  height: 100%;
+  padding: 1%;
+  float: left;
+}
+.newsDesc{
+  text-align: justify;
+  width: 70%;
+  height: 100%;
+  float: left;
+  &:after{
+    clear: both;
+  }
+}
+.newsBigImage{
+  float: left;
+  width: 40%;
+  padding: 1%;
+  img{
+    max-width: 100%;
+    height: auto;
+  }
+}
+.newsTitle{
+  width: 60%;
+  float: left;
+  padding-left: 1%;
+}
+input.search[type=text]{
+  font-size: @subtitle;
+  line-height: 10%;
+  margin-top: 7%;
+  width: 90%;
+  border: 2px solid @primaryCol;
+  border-radius: 4px;
+  &:focus{
+    background-color: @secondaryColor;
+  }
+}
+.search{
+  margin: 2%;
+  padding-left: 2%;
 }
 }
 /*FOR TABLETS*/
@@ -128,13 +170,14 @@ ul.topnav li.icon {
   width: 90%;
   margin: 0 auto;
 }
-ul.topnav li.icon {display: none;}
+ul.topnav li.icon {
+  display: none;
+}
 .sideMenu {
   float: left;
   width: 30%;
   height: 100%;
   background-color: #fff; 
-  float: left;
   ul{
     list-style-type: none;
     }
@@ -150,7 +193,7 @@ ul.topnav li.icon {display: none;}
   width: 70%;
   height: 100%;
   background-color: #fff;
-  float:left;
+  float: right;
   }
 .standard{
   width: 20vw;
@@ -180,7 +223,7 @@ ul.topnav li.icon {display: none;}
 }
 .newsSide{
   width: 70%;
-  float: left;
+  float: right;
   text-align: justify;
   padding: 0 1% 1% 1%; 
 }
@@ -202,11 +245,41 @@ ul.topnav li.icon {display: none;}
   }
   padding: 1%;
 }
+<<<<<<< HEAD
 .errorMessage{
   display: block;
   width: 60%;
   color: #F44336;
   font-size: @pSize2;
+=======
+.newsImage{
+  width: 90%;
+  height: 100%;
+  padding: 1%;
+  float: left;
+}
+.newsDesc{
+  text-align: justify;
+  width: 100%;
+  height: 100%;
+  float: left;
+  &:after{
+    clear: both;
+  }
+}
+.newsBigImage{
+  float: left;
+  width: 100%;
+  padding: 1%;
+  img{
+    width: 100%;
+    height: auto;
+  }
+}
+.newsTitle{
+  width: 100%;
+  float: left;
+  padding-left: 1%;
 }
 }
 /*FOR MOBILE*/
@@ -251,7 +324,6 @@ ul.topnav.responsive li a {
   width: 100%;
   height: 100%;
   background-color: #fff; 
-  float: left;
   text-align: center;
   ul{
     list-style-type: none;
@@ -271,7 +343,6 @@ ul.topnav.responsive li a {
   width: 100%;
   height: 100%;
   background-color: #fff;
-  float:left;
   }
 .standard{
   width: 70%;
@@ -336,10 +407,39 @@ ul.topnav.responsive li a {
   }
   padding: 1%;
 }
+<<<<<<< HEAD
 .errorMessage{
   display: block;
   width: 100%;
   color: #F44336;
   font-size: @pSize2;
+=======
+.newsImage{
+  width: 90%;
+  height: 100%;
+  padding: 1%;
+}
+.newsDesc{
+  text-align: justify;
+  width: 100%;
+  height: 100%;
+  float: left;
+  &:after{
+    clear: both;
+  }
+}
+.newsBigImage{
+  float: left;
+  width: 100%;
+  padding: 1%;
+  img{
+    width: 100%;
+    height: auto;
+  }
+}
+.newsTitle{
+  width: 100%;
+  float: left;
+  padding-left: 1%;
 }
 }

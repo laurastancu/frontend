@@ -1,13 +1,17 @@
+//- Header Partial
 .header
+  //- Left section of header
   .headerLeft
+    //- Homepage link added on logo
     a(href='index.html')
       img.logo(src='../img/logo.jpg', alt='Logo Image')
-    //- img.centerLogo(src='../img/newsweekLogo.png', alt='Logo Image') CENTERED ELABORATED LOGO
-    // End of headerLeft
+  //- Right section of header
   .headerRight
+    form
+        input.search(type='text', placeholder='Search...')    
+    //- Link to login page added on homepage login button
     a(href='login.html')
       button.loginButton
         span Login
-        // End of headerRight
+  //- Clearfix for layout issue 
   .clear
-      // End of header 

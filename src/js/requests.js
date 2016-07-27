@@ -54,6 +54,11 @@ function doRequest(url, successFn, method, data, dataType) {
   }
 }
 
+function showNews(news){
+  placeTemplate("#entry-template", ".newsContainer", {"news": news});
+}
+
+
 function getCategories(){
   var successFn = function (response, textStatus, jqXHR) {
     if (jqXHR.readyState == 4 && jqXHR.status == 200) {
@@ -74,7 +79,17 @@ function getCategories(){
 
 //   XMLHttp.open("GET","../js/categories.json");
 //   XMLHttp.send();  
+  
+
 }
+function showCategories(categories){
+  placeTemplate("#sideMenu-categories",".category-container",categories);
+}
+
+
+
+
+
 function getEvents(){
   var successFn = function (response, textStatus, jqXHR) {
     if (jqXHR.readyState == 4 && jqXHR.status == 200) {
@@ -98,13 +113,9 @@ function getEvents(){
 function showEvents(events){
   placeTemplate("#sideMenu-events",".events-container",{"events":events});
 }
-function showCategories(categories){
-  placeTemplate("#sideMenu-categories",".category-container",categories);
-}
 
-function showNews(news){
-  placeTemplate("#entry-template", ".newsContainer", {"news": news});
-}
+
+
 
 function checkNewsId() {
   var theId = getParameterByName("id");
@@ -114,13 +125,13 @@ function checkNewsId() {
     getNewsById(theId);
   }
 }
-
 function getNewsById(id){
   var successFn = function (response, textStatus, jqXHR) {
     if (jqXHR.readyState == 4 && jqXHR.status == 200) {
         showDetails(response);
       } 
   }
+
 
   doRequest("../js/news.json?id="+id, successFn);
 
@@ -139,7 +150,6 @@ function getNewsById(id){
 function showDetails(theNews){
    placeTemplate("#detailsPage-template",".theNews",{"news":theNews});
 }
-
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;
     name = name.replace(/[\[\]]/g, "\\$&");
@@ -166,7 +176,6 @@ function getFirstThree(myArray){
   }
   return resultArray;
 }
-
 function getMiniNews() {
   var successFn = function (response, textStatus, jqXHR) {
     if (jqXHR.readyState == 4 && jqXHR.status == 200) {
@@ -188,10 +197,13 @@ function getMiniNews() {
 //   XMLHttp.open("GET","../js/response.json");
 //   XMLHttp.send();
 }
-
 function showMiniNews(news){
   placeTemplate("#miniNews-template", ".row", {"news": news});
 }
+
+
+
+
 
 function getMiniEvents(){
   var successFn = function (response, textStatus, jqXHR) {
@@ -213,10 +225,13 @@ function getMiniEvents(){
 //   XMLHttp.open("GET","../js/events.json");
 //   XMLHttp.send();
 }
-
 function showMiniEvents(events){
   placeTemplate("#miniEvents-template", ".secondrow", {"event": events});
 }
+
+
+
+
 
 function getMoreAbout(){
   var successFn = function (response, textStatus, jqXHR) {
@@ -241,3 +256,51 @@ function getMoreAbout(){
 function showMoreAbout(about){
   placeTemplate("#moreAbout-template", ".newsLeftColumn", {"about": about});
 }
+
+
+
+
+// Location filters
+function checkNewsLocation() {
+  var theLocation = getParameterByName("location");
+  if (theLocation === false) {
+    location.href = "/html/index.html";
+  } else {
+    getNewsByLocation(theLocation);
+  }
+}
+function getNewsByLocation(location){
+  var XMLHttp = new XMLHttpRequest();
+
+    XMLHttp.onreadystatechange = function() {
+    if (XMLHttp.readyState == 4 && XMLHttp.status == 200) {
+      var locationFilter= JSON.parse(XMLHttp.responseText);
+       showDetails(news);
+      }
+  }
+
+  XMLHttp.open("GET","../js/news.json?location="+location);
+  XMLHttp.send();  
+}
+function showDetails(theNews){
+   placeTemplate("#detailsPage-template",".theNews",{"news":theNews});
+}
+
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return false;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+function placeTemplate (templateSelector, containerSelector, detailsObj) {
+  var source = $(templateSelector).html();
+  var template = Handlebars.compile(source);
+
+  var theNews = template(detailsObj);
+  $(containerSelector).html(theNews);
+}
+// End of location filters

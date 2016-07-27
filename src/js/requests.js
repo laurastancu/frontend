@@ -15,42 +15,85 @@ $(document).ready(function () {
 });
 
 function getNews() {
-var XMLHttp = new XMLHttpRequest();
-var startDate = (new Date).getTime();
-
-    XMLHttp.onreadystatechange = function() {
-    if (XMLHttp.readyState == 4 && XMLHttp.status == 200) {
-      var responseOb = JSON.parse(XMLHttp.responseText);
-      showNews(responseOb);
-      }
+  var successFn = function (response, textStatus, jqXHR) {
+    if (jqXHR.readyState == 4 && jqXHR.status == 200) {
+        showNews(response);
+      } 
   }
-  XMLHttp.open("GET","../js/response.json");
-  XMLHttp.send();
+
+  doRequest("../js/response.json", successFn);
+
+// var XMLHttp = new XMLHttpRequest();
+// var startDate = (new Date).getTime();
+
+//     XMLHttp.onreadystatechange = function() {
+//     if (XMLHttp.readyState == 4 && XMLHttp.status == 200) {
+//       var responseOb = JSON.parse(XMLHttp.responseText);
+//       showNews(responseOb);
+//       }
+//   }
+//   XMLHttp.open("GET","../js/response.json");
+//   XMLHttp.send();
 }
-function getCategories(){
-var XMLHttp = new XMLHttpRequest();
 
-    XMLHttp.onreadystatechange = function() {
-    if (XMLHttp.readyState == 4 && XMLHttp.status == 200) {
-      var categ= JSON.parse(XMLHttp.responseText);
-      showCategories(categ);
+function doRequest(url, successFn, method, data, dataType) {
+  if (url !== undefined) {
+    $.ajax({
+      url: url,
+      method: method || "GET",
+      data: data || {},
+      dataType: dataType || "json",
+      success: successFn || function () {},
+      headers: { 
+        'Content-Type': 'application/json' 
       }
+      // success: function(response, textStatus, jqXHR) {},
+      // complete: function(jqXHR, textStatus) {},
+      // error: function(jqXHR, textStatus, errorThrown ) {}
+    });
+  }
+}
+
+function getCategories(){
+  var successFn = function (response, textStatus, jqXHR) {
+    if (jqXHR.readyState == 4 && jqXHR.status == 200) {
+        showCategories(response);
+      } 
   }
 
-  XMLHttp.open("GET","../js/categories.json");
-  XMLHttp.send();  
+  doRequest("../js/categories.json", successFn);
+
+// var XMLHttp = new XMLHttpRequest();
+
+//     XMLHttp.onreadystatechange = function() {
+//     if (XMLHttp.readyState == 4 && XMLHttp.status == 200) {
+//       var categ= JSON.parse(XMLHttp.responseText);
+//       showCategories(categ);
+//       }
+//   }
+
+//   XMLHttp.open("GET","../js/categories.json");
+//   XMLHttp.send();  
 }
 function getEvents(){
-var XMLHttp = new XMLHttpRequest();
-
-    XMLHttp.onreadystatechange = function() {
-    if (XMLHttp.readyState == 4 && XMLHttp.status == 200) {
-      var events= JSON.parse(XMLHttp.responseText);
-      showEvents(events);
-      }
+  var successFn = function (response, textStatus, jqXHR) {
+    if (jqXHR.readyState == 4 && jqXHR.status == 200) {
+        showEvents(response);
+      } 
   }
-  XMLHttp.open("GET","../js/events.json");
-  XMLHttp.send();
+
+  doRequest("../js/events.json", successFn);
+
+// var XMLHttp = new XMLHttpRequest();
+
+//     XMLHttp.onreadystatechange = function() {
+//     if (XMLHttp.readyState == 4 && XMLHttp.status == 200) {
+//       var events= JSON.parse(XMLHttp.responseText);
+//       showEvents(events);
+//       }
+//   }
+//   XMLHttp.open("GET","../js/events.json");
+//   XMLHttp.send();
 }
 function showEvents(events){
   placeTemplate("#sideMenu-events",".events-container",{"events":events});
@@ -73,17 +116,25 @@ function checkNewsId() {
 }
 
 function getNewsById(id){
-  var XMLHttp = new XMLHttpRequest();
-
-    XMLHttp.onreadystatechange = function() {
-    if (XMLHttp.readyState == 4 && XMLHttp.status == 200) {
-      var news= JSON.parse(XMLHttp.responseText);
-       showDetails(news);
-      }
+  var successFn = function (response, textStatus, jqXHR) {
+    if (jqXHR.readyState == 4 && jqXHR.status == 200) {
+        showDetails(response);
+      } 
   }
 
-  XMLHttp.open("GET","../js/news.json?id="+id);
-  XMLHttp.send();  
+  doRequest("../js/news.json?id="+id, successFn);
+
+  // var XMLHttp = new XMLHttpRequest();
+
+  //   XMLHttp.onreadystatechange = function() {
+  //   if (XMLHttp.readyState == 4 && XMLHttp.status == 200) {
+  //     var news= JSON.parse(XMLHttp.responseText);
+  //      showDetails(news);
+  //     }
+  // }
+
+  // XMLHttp.open("GET","../js/news.json?id="+id);
+  // XMLHttp.send();  
 }
 function showDetails(theNews){
    placeTemplate("#detailsPage-template",".theNews",{"news":theNews});
@@ -117,17 +168,25 @@ function getFirstThree(myArray){
 }
 
 function getMiniNews() {
-var XMLHttp = new XMLHttpRequest();
-var startDate = (new Date).getTime();
-var resultArray=[];
-    XMLHttp.onreadystatechange = function() {
-    if (XMLHttp.readyState == 4 && XMLHttp.status == 200) {
-      resultArray = getFirstThree(JSON.parse(XMLHttp.responseText));
-      showMiniNews(resultArray);
-      }
+  var successFn = function (response, textStatus, jqXHR) {
+    if (jqXHR.readyState == 4 && jqXHR.status == 200) {
+        showMiniNews(getFirstThree(response));
+      } 
   }
-  XMLHttp.open("GET","../js/response.json");
-  XMLHttp.send();
+
+  doRequest("../js/response.json", successFn);
+
+// var XMLHttp = new XMLHttpRequest();
+// var startDate = (new Date).getTime();
+// var resultArray=[];
+//     XMLHttp.onreadystatechange = function() {
+//     if (XMLHttp.readyState == 4 && XMLHttp.status == 200) {
+//       resultArray = getFirstThree(JSON.parse(XMLHttp.responseText));
+//       showMiniNews(resultArray);
+//       }
+//   }
+//   XMLHttp.open("GET","../js/response.json");
+//   XMLHttp.send();
 }
 
 function showMiniNews(news){
@@ -135,16 +194,24 @@ function showMiniNews(news){
 }
 
 function getMiniEvents(){
-var XMLHttp = new XMLHttpRequest();
-var resultArray = [];
-    XMLHttp.onreadystatechange = function() {
-    if (XMLHttp.readyState == 4 && XMLHttp.status == 200) {
-      resultArray = getFirstThree(JSON.parse(XMLHttp.responseText));
-      showMiniEvents(resultArray);     
-       }
+  var successFn = function (response, textStatus, jqXHR) {
+    if (jqXHR.readyState == 4 && jqXHR.status == 200) {
+        showMiniEvents(getFirstThree(response));
+      } 
   }
-  XMLHttp.open("GET","../js/events.json");
-  XMLHttp.send();
+
+  doRequest("../js/events.json", successFn);
+
+// var XMLHttp = new XMLHttpRequest();
+// var resultArray = [];
+//     XMLHttp.onreadystatechange = function() {
+//     if (XMLHttp.readyState == 4 && XMLHttp.status == 200) {
+//       resultArray = getFirstThree(JSON.parse(XMLHttp.responseText));
+//       showMiniEvents(resultArray);     
+//        }
+//   }
+//   XMLHttp.open("GET","../js/events.json");
+//   XMLHttp.send();
 }
 
 function showMiniEvents(events){
@@ -152,15 +219,23 @@ function showMiniEvents(events){
 }
 
 function getMoreAbout(){
-var XMLHttp = new XMLHttpRequest();
-var resultArray = [];
-    XMLHttp.onreadystatechange = function() {
-    if (XMLHttp.readyState == 4 && XMLHttp.status == 200) {
-      showMoreAbout(JSON.parse(XMLHttp.responseText));     
-      }
+  var successFn = function (response, textStatus, jqXHR) {
+    if (jqXHR.readyState == 4 && jqXHR.status == 200) {
+        showMoreAbout(response);
+      } 
   }
-  XMLHttp.open("GET","../js/moreAbout.json");
-  XMLHttp.send();
+
+  doRequest("../js/moreAbout.json", successFn);
+
+// var XMLHttp = new XMLHttpRequest();
+// var resultArray = [];
+//     XMLHttp.onreadystatechange = function() {
+//     if (XMLHttp.readyState == 4 && XMLHttp.status == 200) {
+//       showMoreAbout(JSON.parse(XMLHttp.responseText));     
+//       }
+//   }
+//   XMLHttp.open("GET","../js/moreAbout.json");
+//   XMLHttp.send();
 }
 
 function showMoreAbout(about){

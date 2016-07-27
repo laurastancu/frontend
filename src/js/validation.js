@@ -1,17 +1,13 @@
 window.onload = function(){
-  var errors=0;
-  // Verif the register fields 
-  document.getElementById("registerButton").onclick = function(){
-    errors=registerValidation();
-    if (errors==0){
-      //SUBMIT
-    }
-    else {
-      //verif data again
+  $(document).on("click", "#registerButton", function (e) {
       registerValidation();
-    }
+
+    })
+
+  // document.getElementById("registerButton").onclick = function(){
+  //       registerValidation();
+  //   }
   }
-}
 
 function registerValidation(){
   // initialize register data
@@ -74,7 +70,22 @@ function registerValidation(){
       document.getElementById("Email").innerHTML='';
       document.getElementById("rE").style.border="";
   }
-  return countErrors;
+  
+  //if valid is ok create user
+  if(countErrors==0) {
+    var userData = {
+        username: username,
+        pass: md5(pass),
+        fname: fname,
+        lname: lname,
+        email: email,
+        country: country,
+        age: age
+      }
+      console.log(userData);
+
+    //insertUserData(userData);
+  }
 }
 
 
@@ -107,4 +118,36 @@ function verifEmail(mail){
         return false;
     }
   return true;
+}
+
+function insertUserData(user){
+  var successFn = function (response, textStatus, jqXHR) {
+    if (jqXHR.readyState == 4 && jqXHR.status == 200) {
+      if (response.error !== undefined) {
+        alert(response.error);
+      } else {
+        console.log(response);  
+      }
+      
+    } 
+  }
+
+  doRequest("http://172.16.226.18:8080/auth/users", successFn, "POST", user);
+
+
+  // var XMLHttp = new XMLHttpRequest();
+  // var url='auth/users';
+  // var params = user;
+  // XMLHttp.open("POST", url, true);
+  // XMLHttp.send(params);
+}
+
+function User(username,pass,fname,lname,email,country,age){
+  this.username= username;
+  this.pass= pass;
+  this.fname= fname;
+  this.lname= lname;
+  this.email= email;
+  this.country= country;
+  this.age= age;
 }

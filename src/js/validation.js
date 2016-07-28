@@ -156,13 +156,12 @@ function loginValidation(){
       } 
     }
   }
-
+  
   var user = {
     userName : loginUsername,
-    password : md5(loginPass)
+    password : loginPass
   }
   userJson = JSON.stringify(user);
-  console.log(userJson);
   
   doRequest(url + 'auth/authenticate ', successFn, "POST", userJson);
 }

@@ -1,12 +1,11 @@
+var url="http://172.16.226.18:8080/";
 window.onload = function(){
   $(document).on("click", "#registerButton", function (e) {
       registerValidation();
-
     })
-
-  // document.getElementById("registerButton").onclick = function(){
-  //       registerValidation();
-  //   }
+  $(document).on("click", "#loginFormButton", function (e) {
+      loginValidation();
+    })
   }
 
 function registerValidation(){
@@ -73,18 +72,11 @@ function registerValidation(){
   
   //if valid is ok create user
   if(countErrors==0) {
-    var userData = {
-        username: username,
-        pass: md5(pass),
-        fname: fname,
-        lname: lname,
-        email: email,
-        country: country,
-        age: age
-      }
-      console.log(userData);
-
-    //insertUserData(userData);
+    var userData = new User(username,pass,fname,lname,email,country,age);
+    
+    var userDataJson= JSON.stringify(userData);
+    
+    insertUserData(userDataJson);
   }
 }
 
@@ -128,26 +120,49 @@ function insertUserData(user){
       } else {
         console.log(response);  
       }
-      
     } 
   }
 
-  doRequest("http://172.16.226.18:8080/auth/users", successFn, "POST", user);
-
-
-  // var XMLHttp = new XMLHttpRequest();
-  // var url='auth/users';
-  // var params = user;
-  // XMLHttp.open("POST", url, true);
-  // XMLHttp.send(params);
+  doRequest(url + 'auth/users', successFn, "POST", user);
 }
 
 function User(username,pass,fname,lname,email,country,age){
-  this.username= username;
-  this.pass= pass;
-  this.fname= fname;
-  this.lname= lname;
+  this.userName= username;
+  this.password= md5(pass);
+  this.firstName= fname;
+  this.lastName= lname;
   this.email= email;
   this.country= country;
   this.age= age;
+}
+
+function loginValidation(){
+  countErrors=0;
+  var loginUsername = document.forms['loginForm']['username'].value; 
+  var loginPass= md5(document.forms['loginForm']['pass'].value);
+  console.log(loginUsername);
+  if ((loginUsername.length < 8)||(loginPass.length<8)){
+    document.getElementById("loginError").innerHTML='Wrong username or password';
+    countErrors++;
+  }
+  if (countErrors==0){
+     var successFn = function (response, textStatus, jqXHR) {
+      if (jqXHR.readyState == 4 && jqXHR.status == 200) {
+        if (response.error !== undefined) {
+          alert(response.error);
+        } else {
+          console.log(response);  
+        }
+      } 
+    }
+  }
+
+  var user = {
+    userName : loginUsername,
+    password : md5(loginPass)
+  }
+  userJson = JSON.stringify(user);
+  console.log(userJson);
+  
+  doRequest(url + 'auth/authenticate ', successFn, "POST", userJson);
 }

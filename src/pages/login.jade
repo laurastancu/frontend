@@ -7,17 +7,18 @@ html
       include helpers/header.jade
       .content
         .login
-          #logInDiv.loginForm
+          #logInDiv.loginDiv
             p.title1 Log IN
-            form(action='', method='')
+            form(name='loginForm')
               p
                 label(for='username') Username: 
-                input#username(type='text', name='username', placeholder='Type in username...')
+                input#username(type='text', name='username')
               p
                 label(for='pass') Password: 
-                input#pass(type='password', name='pass', placeholder='Type in password...')
+                input#pass(type='password', name='pass')
+                span#loginError.errorMessage
               label
-              input(type='submit', value='Log IN')
+              input(type='button', value='Log IN' , id='loginFormButton')
               br
               p
                 | If you are not registered, click 

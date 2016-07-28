@@ -39,14 +39,19 @@ function getNews() {
 function doRequest(url, successFn, method, data, dataType) {
   if (url !== undefined) {
     $.ajax({
+
       url: url,
       method: method || "GET",
       data: data || {},
       dataType: dataType || "json",
       success: successFn || function () {},
+      crossDomain: true,
       headers: { 
         'Content-Type': 'application/json' 
-      }
+      },
+      // beforeSend: function (jqXHR, settings) {
+      //   console.log(settings);
+      // }
       // success: function(response, textStatus, jqXHR) {},
       // complete: function(jqXHR, textStatus) {},
       // error: function(jqXHR, textStatus, errorThrown ) {}
